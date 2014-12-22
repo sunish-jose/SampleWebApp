@@ -24,7 +24,7 @@
 	<div class="container">
 		<div class="table-responsive">
 			<h3>Cycle Calendar</h3>
-			<table class="table table-bordered table-striped table-hover"
+			<table class="table table-bordered table-striped table-hover table-curved"
 				id="cycleCalendar">
 				<tbody>
 					<tr>
@@ -66,7 +66,7 @@
 		<!-- row starting -->
 		<div class="row topPadding10px">
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Net Receiver</th>
@@ -84,7 +84,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Net Payer</th>
@@ -102,7 +102,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Missing Aggrement</th>
@@ -116,7 +116,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Missing Invoice</th>
@@ -134,7 +134,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Unreconciled Invoice</th>
@@ -152,7 +152,7 @@
 			</div>
 
 			<div class="col-md-2">
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th colspan="2">Incoming missing CN</th>
@@ -172,7 +172,7 @@
 
 			<div class="col-md-6">
 				<h3>Bank Balance</h3>
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th>Curency</th>
@@ -195,7 +195,7 @@
 
 			<div class="col-md-6">
 				<h3>Unallocated Cash</h3>
-				<table class="table table-bordered table-striped table-hover">
+				<table class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th>Curency</th>

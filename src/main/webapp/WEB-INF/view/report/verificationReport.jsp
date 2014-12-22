@@ -23,7 +23,7 @@
 
 	<div class="container">
 		<h3>Verification Report</h3>
-		<table class="table table-bordered">
+		<table class="table table-bordered table-curved">
 			<tbody>
 				<tr>
 					<th>Position Summary Report</th>

@@ -21,7 +21,7 @@
 	<%@include file="../navbar.jsp"%>
 	<div class="container">
 		<h3>Standard Report</h3>
-		<table class="table table-bordered">
+		<table class="table table-bordered table-curved">
 			<tbody>
 				<tr>
 					<th>Payment Indicative Report</th>

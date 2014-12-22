@@ -39,7 +39,7 @@
 			</div>
 			<div class="col-sm-9">
 				<div>
-					<table class="table table-bordered customTabBorderBlue">
+					<table class="table table-bordered customTabBorderBlue table-curved">
 						<tbody>
 							<tr>
 								<td colspan="3" style="font-weight: bold;">User: Siva
@@ -51,7 +51,7 @@
 							</tr>
 							<tr style="vertical-align: middle">
 								<td
-									style="border: none; text-align: left; font-weight: bold; vertical-align: middle; width: 33%;">Funding
+									style="text-align: left; font-weight: bold; vertical-align: middle; width: 33%;">Funding
 									due in</td>
 								<td
 									style="border: none; text-align: center; font-weight: bold; vertical-align: middle; width: 80px; height: 85px; background: url(../images/redcircle.jpg) no-repeat;">3
@@ -69,7 +69,7 @@
 			<div class="col-sm-12">
 				<!-- funds table -->
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped table-hover">
+					<table class="table table-bordered table-striped table-hover table-curved">
 						<tbody>
 							<tr>
 								<th>Currency</th>
