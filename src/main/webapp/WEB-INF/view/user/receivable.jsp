@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href="../css/styles.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
@@ -23,7 +24,7 @@
 		<div class="row topPadding10px">
 			<div class="col-md-6">
 				<h3>Receipt</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Account No</th>
@@ -52,7 +53,7 @@
 
 			<div class="col-md-6">
 				<h3>Last 3 Months Collection</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Account No</th>
@@ -81,7 +82,7 @@
 
 			<div class="col-md-10">
 				<h3>Outstanding Receivables (Net Receiver)</h3>
-				<table class="table table-bordered customTabBorderBlue"
+				<table class="table table-bordered table-striped table-hover"
 					id="outstandingRx">
 					<tbody>
 						<tr>
@@ -117,7 +118,7 @@
 
 			<div class="col-md-2">
 				<h3>&nbsp;</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Unallocated Cash</th>
@@ -134,7 +135,7 @@
 
 			<div class="col-md-12">
 				<h3>Top 10 Receivable Positions</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Tadgic Code</th>
@@ -214,5 +215,13 @@
 			window.location.href = "position";
 		});
 	</script>
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
+		</div>
+	</footer>
+	<!-- footer ends -->	
 </body>
 </html>

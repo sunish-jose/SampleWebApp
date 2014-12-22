@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href="../css/styles.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
@@ -20,7 +21,7 @@
 	<%@include file="../navbar.jsp"%>
 	<div class="container">
 		<h3>Standard Report</h3>
-		<table class="table table-bordered customTabBorderBlue">
+		<table class="table table-bordered">
 			<tbody>
 				<tr>
 					<th>Payment Indicative Report</th>
@@ -39,6 +40,20 @@
 			</tbody>
 		</table>
 	</div>
-
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Place sticky footer content here.</p>
+		</div>
+	</footer>
+	<!-- footer ends -->
+	
+		<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
+		</div>
+	</footer>
+	<!-- footer ends -->
 </body>
 </html>

@@ -1,6 +1,5 @@
 package com.bsg.controller;
 
-import java.util.Date;
 
 import javax.validation.Valid;
 
@@ -68,9 +67,8 @@ public class UserController extends BaseController {
 		}
 		String password = cipher.encrypt(user.getPassword());
 		user.setPassword(password);
-		user.setCreationDate(new Date());
 		baseService.createEntity(user);
-		return "redirect:/"+user.getFullName();
+		return "redirect:/"+user.getSurName();
 	}
 	
 }

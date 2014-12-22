@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href="../css/styles.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
@@ -14,6 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <script src="../js/Chart.js"></script>
+<script src="../js/script.js"></script>
 </head>
 <body>
 
@@ -217,48 +219,13 @@
 		</div>
 		<!-- row ending -->
 	</div>
-	<script type="text/javascript">
-		$('#cycleCalendar tr').click(function() {
-			alert('I am clickable table')
-		});
 
-		$('#rxr1').click(function() {
-			window.location.href = "position";
-		});
-
-		$('#rxr2').click(function() {
-			window.location.href = "position";
-		});
-
-		$('#payer1').click(function() {
-			window.location.href = "position";
-		});
-
-		$('#payer2').click(function() {
-			window.location.href = "position";
-		});
-
-		$('#agrement1').click(function() {
-			window.location.href = "position";
-		});
-		$('#invoice1').click(function() {
-			window.location.href = "position";
-		});
-		$('#invoice2').click(function() {
-			window.location.href = "position";
-		});
-		$('#uinvoice1').click(function() {
-			window.location.href = "position";
-		});
-		$('#uinvoice2').click(function() {
-			window.location.href = "position";
-		});
-		$('#cn1').click(function() {
-			window.location.href = "position";
-		});
-		$('#cn2').click(function() {
-			window.location.href = "position";
-		});
-	</script>
+	<!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
+      </div>
+    </footer>
+    <!-- footer ends -->
 </body>
 </html>

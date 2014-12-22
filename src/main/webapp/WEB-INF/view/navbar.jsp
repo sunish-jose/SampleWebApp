@@ -76,8 +76,8 @@
 							<!-- Start of 	invoice -->
 							<li class="dropdown-submenu"><a href="#">Invoices</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="receivable">Receivable</a></li>
-									<li><a href="payable">Payable</a></li>
+									<li><a href="../user/receivable">Receivable</a></li>
+									<li><a href="../user/payable">Payable</a></li>
 								</ul></li>
 							<!-- end of submenu -->
 

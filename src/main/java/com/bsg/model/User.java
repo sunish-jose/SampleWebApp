@@ -12,34 +12,37 @@ import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import org.hibernate.annotations.Type;
-
 @Entity
-@Table(name="users")
+@Table(name="TB_User")
 public class User implements Serializable{
 	
 	private static final long serialVersionUID = 5210351005738429366L;
 
 	@Id
-	@Column(name="userId")
+	@Column(name="USER_ID")
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long userId;
 	
-	@Size(min=3, max=20, message="Full name must be between 3 and 100 characters long.")
-	@Column(name="fullName")
-	private String fullName;
+	@Column(name="First_Name")
+	private String firstName;
+	
+	@Column(name="Surname")
+	private String surName;
 	
 	@Pattern(regexp="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}",  message="Invalid email address.")
-	@Column(name="email")
+	@Column(name="Login_Email")
 	private String email;
 	
 	@Size(min=6, max=120, message="The password must be at least 6 characters long.")
 	@Column(name="password")
 	private String password;
 	
-	@Column(name="creationDate")
-	@Type(type="date")
-	private Date creationDate;
+	@Column(name="User_Type")
+	private char userType;
+	
+	@Column(name="Deactivation_Date")
+	private Date deactivationDate;
+	
 
 	public long getUserId() {
 		return userId;
@@ -57,14 +60,6 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
-	public String getFullName() {
-		return fullName;
-	}
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -73,12 +68,36 @@ public class User implements Serializable{
 		this.email = email;
 	}
 
-	public Date getCreationDate() {
-		return creationDate;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setCreationDate(Date creationDate) {
-		this.creationDate = creationDate;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getSurName() {
+		return surName;
+	}
+
+	public void setSurName(String surName) {
+		this.surName = surName;
+	}
+
+	public char getUserType() {
+		return userType;
+	}
+
+	public void setUserType(char userType) {
+		this.userType = userType;
+	}
+
+	public Date getDeactivationDate() {
+		return deactivationDate;
+	}
+
+	public void setDeactivationDate(Date deactivationDate) {
+		this.deactivationDate = deactivationDate;
 	}
 	
 }

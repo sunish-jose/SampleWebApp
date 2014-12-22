@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href="../css/styles.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
@@ -23,7 +24,7 @@
 		<div class="row topPadding10px">
 			<div class="col-md-8">
 				<h3>Funding</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Currency</th>
@@ -48,8 +49,8 @@
 			</div>
 
 			<div class="col-md-4">
-				<h3>Total Funding</h3>
-				<table class="table table-bordered customTabBorderBlue">
+				<h3>Estimated Funding</h3>
+				<table class="table table-bordered table-striped table-hover">
 					<tbody>
 						<tr>
 							<th>Currency</th>
@@ -67,111 +68,127 @@
 				</table>
 			</div>
 
-			<div class="col-md-6">
-				<h3>To be Paid in Current Cycle</h3>
-				<table class="table table-bordered customTabBorderBlue"
-					id="tobaPaid">
-					<tbody>
-						<tr>
-							<th>Currency</th>
-							<th>Amount</th>
-							<th>Net SDR</th>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td colspan="2" style="text-align: right;">Total</td>
-							<td>25,200.00</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="fundingTab">
+				<ul class="nav nav-tabs">
+					<li class="active"><a data-toggle="tab" href="#sectionA">To be Paid in Current Cycle</a></li>
+					<li><a data-toggle="tab" href="#sectionB">Outstanding Payable</a></li>
+				</ul>
 			</div>
 
-			<div class="col-md-6">
-				<h3>Outstanding Payable</h3>
-				<table class="table table-bordered customTabBorderBlue"
-					id="outstanding">
-					<tbody>
-						<tr>
-							<th>Currency</th>
-							<th>Amount</th>
-							<th>Net SDR</th>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>USD</td>
-							<td>10,0000</td>
-							<td>10,000</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td>EUR</td>
-							<td>25,200.00</td>
-							<td>25,200.00</td>
-						</tr>
-						<tr>
-							<td colspan="2" style="text-align: right;">Total</td>
-							<td>25,200.00</td>
-						</tr>
-					</tbody>
-				</table>
+			<div class="tab-content">
+				<div id="sectionA" class="tab-pane fade in active">
+					<div class="col-md-12">
+						<h3>To be Paid in Current Cycle</h3>
+						<table class="table table-bordered table-striped table-hover"
+							id="tobaPaid">
+							<tbody>
+								<tr>
+									<th>Currency</th>
+									<th>Amount</th>
+									<th>Net SDR</th>
+								</tr>
+								<tr>
+									<td>USD</td>
+									<td>10,0000</td>
+									<td>10,000</td>
+								</tr>
+								<tr>
+									<td>EUR</td>
+									<td>25,200.00</td>
+									<td>25,200.00</td>
+								</tr>
+								<tr>
+									<td>INR</td>
+									<td>10,0000</td>
+									<td>10,000</td>
+								</tr>
+								<tr>
+									<td>JYP</td>
+									<td>22,200.00</td>
+									<td>17,256.25</td>
+								</tr>
+								<tr>
+									<td>HKD</td>
+									<td>25,200.00</td>
+									<td>25,200.00</td>
+								</tr>
+								<tr>
+									<td>FJD</td>
+									<td>10,000.00</td>
+									<td>10,000.00</td>
+								</tr>
+								<tr>
+									<td>ILS</td>
+									<td>22,000</td>
+									<td>17,256.25</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align: right;">Total</td>
+									<td>125,253.25</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div id="sectionB" class="tab-pane fade">
+					<div class="col-md-12">
+
+						<h3>Outstanding Payable</h3>
+
+						<table class="table table-bordered table-striped table-hover"
+							id="outstanding">
+							<tbody>
+								<tr>
+									<th>Currency</th>
+									<th>Amount</th>
+									<th>Net SDR</th>
+								</tr>
+								<tr>
+									<td>USD</td>
+									<td>10,0000</td>
+									<td>10,000</td>
+								</tr>
+								<tr>
+									<td>EUR</td>
+									<td>25,200.00</td>
+									<td>25,200.00</td>
+								</tr>
+								<tr>
+									<td>INR</td>
+									<td>10,0000</td>
+									<td>10,000</td>
+								</tr>
+								<tr>
+									<td>JYP</td>
+									<td>22,000</td>
+									<td>17,256.25</td>
+								</tr>
+								<tr>
+									<td>HKD</td>
+									<td>25,200.00</td>
+									<td>25,200.00</td>
+								</tr>
+								<tr>
+									<td>FJD</td>
+									<td>10,000</td>
+									<td>10,000</td>
+								</tr>
+								<tr>
+									<td>ILS</td>
+									<td>22,000</td>
+									<td>17,256.25</td>
+								</tr>
+								<tr>
+									<td colspan="2" style="text-align: right;">Total</td>
+									<td>155,253.25</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
+
 		</div>
 	</div>
 	<script type="text/javascript">
@@ -182,5 +199,13 @@
 			window.location.href = "position";
 		});
 	</script>
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
+		</div>
+	</footer>
+	<!-- footer ends -->
 </body>
 </html>

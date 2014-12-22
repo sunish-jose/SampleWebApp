@@ -6,6 +6,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <link href="../css/styles.css" rel="stylesheet">
+<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 <script
@@ -232,5 +233,13 @@
 			}
 		});
 	</script>
+
+	<!-- footer -->
+	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
+		</div>
+	</footer>
+	<!-- footer ends -->
 </body>
 </html>
