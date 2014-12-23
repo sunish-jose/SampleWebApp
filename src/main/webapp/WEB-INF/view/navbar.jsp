@@ -48,7 +48,7 @@
 									<li><a href="#">Debtors summary</a></li>
 									<li><a href="#">Debt Chasing </a></li>
 									<li><a href="#">Collection and Allocations</a></li>
-									<li><a href="#">Receipt handling</a></li>
+									<li><a href="../user/receivable">Receipt handling</a></li>
 								</ul></li>
 
 							<!-- Start of submenu -->
@@ -56,7 +56,7 @@
 								<ul class="dropdown-menu" role="menu">
 									<li><a href="#">Approval for Payments</a></li>
 									<li><a href="../user/funding">Funding</a></li>
-									<li><a href="#">Payable Summary</a></li>
+									<li><a href="../user/payable">Payable Summary</a></li>
 									<li><a href="#">Pre-Payment Calculation </a></li>
 									<li><a href="#">Actual Calculation</a></li>
 									<li><a href="#">Out of Cycle settlement </a></li>
@@ -76,8 +76,8 @@
 							<!-- Start of 	invoice -->
 							<li class="dropdown-submenu"><a href="#">Invoices</a>
 								<ul class="dropdown-menu" role="menu">
-									<li><a href="../user/receivable">Receivable</a></li>
-									<li><a href="../user/payable">Payable</a></li>
+									<li><a href="#">Receivable</a></li>
+									<li><a href="#">Payable</a></li>
 								</ul></li>
 							<!-- end of submenu -->
 

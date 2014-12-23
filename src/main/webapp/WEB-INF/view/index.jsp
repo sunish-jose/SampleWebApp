@@ -28,7 +28,7 @@
 </head>
 <body>
 	<div class="container" >
-		<form class="form-signin" role="form" name="loginForm" action="<c:url value='j_spring_security_check' />" method='POST'>
+		<form class="form-signin" role="form" name="loginForm" action="user/home" method='GET'>
 					<div class="container">
 			 <img alt="BSG Wireless" src="images/bsgLogo.jpg">
 			 </div>

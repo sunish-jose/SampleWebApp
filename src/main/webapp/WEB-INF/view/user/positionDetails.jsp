@@ -98,7 +98,7 @@
 	</div>
 
 	<!-- Modal Tx details -->
-	<div id="modalTx" class="modal">
+	<div id="modalTx" class="modal fade">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -181,7 +181,7 @@
 
 
 	<!-- Modal window Notes -->
-	<div id="modalNote" class="modal">
+	<div id="modalNote" class="modal fade">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">
 				<div class="modal-header">

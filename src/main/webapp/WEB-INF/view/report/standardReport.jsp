@@ -20,6 +20,10 @@
 	<!-- navbar -->
 	<%@include file="../navbar.jsp"%>
 	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="../user/home">Home</a></li>
+			<li class="active">Standard Report</li>
+		</ol>
 		<h3>Standard Report</h3>
 		<table class="table table-bordered table-curved">
 			<tbody>
@@ -47,8 +51,8 @@
 		</div>
 	</footer>
 	<!-- footer ends -->
-	
-		<!-- footer -->
+
+	<!-- footer -->
 	<footer class="footer">
 		<div class="container">
 			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>

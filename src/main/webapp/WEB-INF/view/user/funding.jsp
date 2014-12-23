@@ -21,6 +21,10 @@
 	<%@include file="../navbar.jsp"%>
 	<!-- /container -->
 	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="../user/home">Home</a></li>
+			<li class="active">Funding</li>
+		</ol>
 		<div class="row">
 			<div class="col-sm-3">
 				<!-- right side navigation -->
@@ -39,7 +43,8 @@
 			</div>
 			<div class="col-sm-9">
 				<div>
-					<table class="table table-bordered customTabBorderBlue table-curved">
+					<table
+						class="table table-bordered customTabBorderBlue table-curved">
 						<tbody>
 							<tr>
 								<td colspan="3" style="font-weight: bold;">User: Siva
@@ -69,7 +74,8 @@
 			<div class="col-sm-12">
 				<!-- funds table -->
 				<div class="table-responsive">
-					<table class="table table-bordered table-striped table-hover table-curved">
+					<table
+						class="table table-bordered table-striped table-hover table-curved">
 						<tbody>
 							<tr>
 								<th>Currency</th>

@@ -20,11 +20,16 @@
 	<!-- navbar -->
 	<%@include file="../navbar.jsp"%>
 	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="../user/home">Home</a></li>
+			<li class="active">Payable Summary</li>
+		</ol>
 		<!-- row starting -->
 		<div class="row topPadding10px">
 			<div class="col-md-8">
 				<h3>Funding</h3>
-				<table class="table table-bordered table-striped table-hover table-curved">
+				<table
+					class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th>Currency</th>
@@ -50,7 +55,8 @@
 
 			<div class="col-md-4">
 				<h3>Estimated Funding</h3>
-				<table class="table table-bordered table-striped table-hover table-curved">
+				<table
+					class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
 							<th>Currency</th>
@@ -70,8 +76,10 @@
 
 			<div class="fundingTab">
 				<ul class="nav nav-tabs">
-					<li class="active"><a data-toggle="tab" href="#sectionA">To be Paid in Current Cycle</a></li>
-					<li><a data-toggle="tab" href="#sectionB">Outstanding Payable</a></li>
+					<li class="active"><a data-toggle="tab" href="#sectionA">To
+							be Paid in Current Cycle</a></li>
+					<li><a data-toggle="tab" href="#sectionB">Outstanding
+							Payable</a></li>
 				</ul>
 			</div>
 
@@ -79,7 +87,8 @@
 				<div id="sectionA" class="tab-pane fade in active">
 					<div class="col-md-12">
 						<h3>To be Paid in Current Cycle</h3>
-						<table class="table table-bordered table-striped table-hover table-curved"
+						<table
+							class="table table-bordered table-striped table-hover table-curved"
 							id="tobaPaid">
 							<tbody>
 								<tr>
@@ -134,7 +143,8 @@
 				<div id="sectionB" class="tab-pane fade">
 					<div class="col-md-12">
 						<h3>Outstanding Payable</h3>
-						<table class="table table-bordered table-striped table-hover table-curved"
+						<table
+							class="table table-bordered table-striped table-hover table-curved"
 							id="outstanding">
 							<tbody>
 								<tr>

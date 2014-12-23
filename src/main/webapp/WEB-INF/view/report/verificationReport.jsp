@@ -22,6 +22,10 @@
 	<%@include file="../navbar.jsp"%>
 
 	<div class="container">
+		<ol class="breadcrumb">
+			<li><a href="../user/home">Home</a></li>
+			<li class="active">Verification Report</li>
+		</ol>
 		<h3>Verification Report</h3>
 		<table class="table table-bordered table-curved">
 			<tbody>
@@ -43,6 +47,7 @@
 				</tr>
 			</tbody>
 		</table>
+	
 	</div>
 
 	<!-- footer -->
