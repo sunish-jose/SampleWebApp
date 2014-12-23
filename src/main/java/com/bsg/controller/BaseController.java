@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class BaseController {
 	private static final String VIEW_INDEX = "index"; 
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcomeCall() {
 		return VIEW_INDEX;
 	}
