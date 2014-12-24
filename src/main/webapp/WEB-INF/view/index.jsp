@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-
+<link href="favicon.ico" rel="shortcut icon" >
 <title>BSG Financial Clearing Portal</title>
 <meta name="description" content="">
 
@@ -33,10 +33,10 @@
 			 <img alt="BSG Wireless" src="images/bsgLogo.jpg">
 			 </div>
 			<h3 class="form-signin-heading">BSG Financial Clearing Portal</h3>
-			<label for="inputEmail" class="sr-only">Username</label> 
-			<input type="text" name="username" class="form-control" placeholder="Enter your username/email" required autofocus>
+			<label for="username" class="sr-only">Username</label> 
+			<input type="text" id="username" class="form-control" placeholder="Enter your username/email" required autofocus>
 			<label for="inputPassword" class="sr-only">Password</label> 
-			<input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+			<input type="password" id="password" class="form-control" placeholder="Enter your password" required>
 			<div class="checkbox">
 				<label><input type="checkbox" value="remember-me">Remember me</label>
 			</div>

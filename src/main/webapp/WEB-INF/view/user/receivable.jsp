@@ -22,7 +22,7 @@
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="../user/home">Home</a></li>
-			<li class="active">Receivable</li>
+			<li class="active">Receipt Handling</li>
 		</ol>
 		<!-- row starting -->
 		<div class="row topPadding10px">

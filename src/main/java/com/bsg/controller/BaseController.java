@@ -6,10 +6,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BaseController {
-	private static final String VIEW_INDEX = "index"; 
-	
+	private static final String VIEW_INDEX = "index";
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String welcomeCall() {
 		return VIEW_INDEX;
 	}
+
+	@RequestMapping("favicon.ico")
+	String favicon() {
+		return "forward:/images/favicon.ico";
+	}
+
 }
