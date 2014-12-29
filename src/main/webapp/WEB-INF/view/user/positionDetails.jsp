@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link href="favicon.ico" rel="shortcut icon" >
 <title>BSG Financial Clearing Portal</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -23,7 +24,7 @@
 	<div class="container">
 		<div class="table-responsive">
 			<h3>Position Admin</h3>
-			<table class="table table-bordered table-striped table-hover"
+			<table class="table table-bordered table-striped table-hover table-curved"
 				id="positionDetails">
 				<tbody>
 					<tr>

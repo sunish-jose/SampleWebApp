@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
@@ -25,7 +26,7 @@
 		<ol class="breadcrumb">
 			<li class="active">Home</li>
 		</ol>
-		<div class="table-responsive">
+		<div>
 			<h3>Cycle Calendar</h3>
 			<table
 				class="table table-bordered table-striped table-hover table-curved"
@@ -68,7 +69,7 @@
 		</div>
 
 		<!-- row starting -->
-		<div class="row topPadding10px">
+		<div class="row topPaddingSmall">
 			<div class="col-md-2">
 				<table
 					class="table table-bordered table-striped table-hover table-curved">

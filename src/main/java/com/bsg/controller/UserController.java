@@ -41,16 +41,16 @@ public class UserController extends BaseController {
 		return "user/edit";
 	}
 	
-	@RequestMapping(value = "/receivable", method = RequestMethod.GET)
+	@RequestMapping(value = "/debtorsSummary", method = RequestMethod.GET)
 	public String receivable(Model model){
 		model.addAttribute(new User());
-		return "user/receivable";
+		return "user/debtorsSummary";
 	}
 	
-	@RequestMapping(value = "/payable", method = RequestMethod.GET)
+	@RequestMapping(value = "/payableSummary", method = RequestMethod.GET)
 	public String payable(Model model){
 		model.addAttribute(new User());
-		return "user/payable";
+		return "user/payableSummary";
 	}	
 	
 

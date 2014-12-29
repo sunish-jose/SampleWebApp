@@ -1,3 +1,9 @@
+@media ( min-width : 1200px) {
+	.container {
+		max-width: 1130px;
+	}
+}
+
 /* Portrait & landscape phone */
 @media ( max-width : 480px) {
 	h3 {
@@ -38,7 +44,7 @@
 	width: 100%;
 }
 
-@media ( max-width : 1199px) {
+@media ( max-width : 990px) {
 	.navbar-header {
 		float: none;
 	}
@@ -77,11 +83,11 @@ body {
 }
 
 .bodypadding {
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
-.topPadding10px {
-	padding-top: 10px;
+.topPaddingSmall {
+	padding-top: 5px;
 }
 
 .dropdown-submenu {
@@ -259,4 +265,7 @@ h3 {
 	border-bottom-right-radius: 5px;
 }
 
-.breadcrumb>li+li:before {color: rgba(204, 204, 204, 1); content: "\232A\00a0";}
+.breadcrumb>li+li:before {
+	color: rgba(204, 204, 204, 1);
+	content: "\232A\00a0";
+}
