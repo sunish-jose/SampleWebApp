@@ -30,9 +30,19 @@ public class UserController extends BaseController {
 		return "user/home";
 	}
 	
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public String search() {
+		return "user/search";
+	}
+	
 	@RequestMapping(value = "/funding", method = RequestMethod.GET)
 	public String showFunding() {
 		return "user/funding";
+	}
+	
+	@RequestMapping(value = "/settings", method = RequestMethod.GET)
+	public String showSettings() {
+		return "user/settings";
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, params="newUser")

@@ -16,6 +16,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <script src="../js/Chart.js"></script>
+<script src="../js/script.js"></script>
 </head>
 <body>
 
@@ -138,13 +139,6 @@
 			});
 		}
 	</script>
-
-	<!-- footer -->
-	<footer class="footer">
-		<div class="container">
-			<p class="text-muted">Copyright &copy; 2014 BSG Wireless</p>
-		</div>
-	</footer>
-	<!-- footer ends -->
+	<%@include file="../footer.jsp"%>
 </body>
 </html>

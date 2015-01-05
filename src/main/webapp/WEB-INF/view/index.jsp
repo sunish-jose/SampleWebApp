@@ -27,7 +27,7 @@
 
 </head>
 <body>
-	<div class="container" >
+	<div class="container borderedDiv" >
 		<form class="form-signin" role="form" name="loginForm" action="user/home" method='GET'>
 					<div class="container">
 			 <img alt="BSG Wireless" src="images/bsgLogo.jpg">

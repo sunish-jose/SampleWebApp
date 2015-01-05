@@ -17,12 +17,16 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="../user/home"><span
-						class="glyphicon glyphicon-home"></span></a></li>
-				<li><a href="#">Communications</a></li>
-				<li><a href="#">Customer View</a></li>
+						class="glyphicon glyphicon-home" data-toggle="tooltip"
+						data-placement="bottom" title="Home"></span></a></li>
+				<li><a href="#"><span
+						class="glyphicon glyphicon-retweet"></span> Communications</a></li>
+				<li><a href="#"><span
+						class="glyphicon glyphicon-eye-open"></span> Customer View</a></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false">FCH
+					data-toggle="dropdown" role="button" aria-expanded="false"><span
+						class="glyphicon glyphicon-dashboard"></span>  FCH
 						Services <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
@@ -90,7 +94,8 @@
 				<!-- end of submenu -->
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown" role="button" aria-expanded="false">IOT
+					data-toggle="dropdown" role="button" aria-expanded="false"><span
+						class="glyphicon glyphicon-bullhorn"></span> IOT
 						Services <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
@@ -103,9 +108,10 @@
 			</ul>
 
 			<ul class="nav navbar-nav navbar-right">
+				<!-- Setup
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"><span
-						class="glyphicon glyphicon-cog"></span> Setup <span class="caret"></span>
+						class="glyphicon glyphicon-cog" data-toggle="tooltip" data-placement="bottom" title="Setup"></span> Setup <span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">Operator - IO</a></li>
@@ -116,15 +122,15 @@
 						<li><a href="#">Authentication setup - IO</a></li>
 						<li><a href="#">Setup Audit - IO</a></li>
 					</ul></li>
+					 -->
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"><span
 						class="glyphicon glyphicon-user"></span> My Account <span
 						class="caret"></span> </a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="#"><span
-								class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-off"></span>
-								Signout</a></li>
+						<li><a href="../user/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-off"></span> Signout</a></li>
 					</ul></li>
 			</ul>
 		</div>
