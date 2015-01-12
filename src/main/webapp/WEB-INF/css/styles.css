@@ -199,10 +199,12 @@ body {
 
 h3 {
 	color: #3366CC;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 }
 
 h4 {
 	color: #3366CC;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 }
 
 .customTabBorderBlue {
@@ -276,7 +278,14 @@ h4 {
 
 #settingDiv {
 	border: 1px solid #a1a1a1;
-	height: 700px;
+	border-radius: 5px;
+	border-color: #819FF7 !important;
+	padding: 3px 20px;
+}
+
+.settingDivCustomerMod {
+	height: 250px;
+	border: 1px solid #a1a1a1;
 	border-radius: 5px;
 	border-color: #819FF7 !important;
 	padding: 3px 20px;
@@ -289,75 +298,81 @@ hr {
 }
 
 /*search box*/
-#imaginary_container{
-    margin-top:10%;
+#imaginary_container {
+	margin-top: 10%;
 }
-.stylish-input-group .input-group-addon{
-    background: white !important; 
-}
-.stylish-input-group .form-control{
-	border-right:0; 
-	box-shadow:0 0 0; 
-	border-color:#ccc;
-}
-.stylish-input-group button{
-    border:0;
-    background:transparent;
-}
-/*search box ends*/
 
-/*auto complete*/
-.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
-.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
-.autocomplete-selected { background: #f0f0f0; }
-.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+.stylish-input-group .input-group-addon {
+	border: 1px solid #3366CC;
+	background: white !important;
+}
 
-/*types ahead*/
-.bs-example{
-	font-family: sans-serif;
-	position: relative;
-	margin: 100px;
+.stylish-input-group .input-group-btn {
+	border: 1px solid #3366CC;
+	background: white !important;
 }
-.typeahead, .tt-query, .tt-hint {
-	border: 2px solid #CCCCCC;
-	border-radius: 8px;
-	font-size: 24px;
-	height: 30px;
-	line-height: 30px;
-	outline: medium none;
-	padding: 8px 12px;
-	width: 396px;
+
+.stylish-input-group .form-control {
+	border-right: 0;
+	padding-right: 0;
+	box-shadow: 0 0 0;
+	border-color: #3366CC;
+	box-shadow: 0 0 0;
 }
-.typeahead {
-	background-color: #FFFFFF;
+
+.stylish-input-group button {
+	border: 0;
+	background: transparent;
 }
-.typeahead:focus {
-	border: 2px solid #0097CF;
+
+.stylish-input-group-no-lfb .input-group-addon {
+	borde-left: 0px;
+	border-right: 1px solid #3366CC;
+	border-top: 1px solid #3366CC;
+	border-bottom: 1px solid #3366CC;
+	background: white !important;
 }
-.tt-query {
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+
+.stylish-input-group-no-lfb .input-group-btn {
+	borde-left: 0px;
+	border-right: 1px solid #3366CC;
+	border-top: 1px solid #3366CC;
+	border-bottom: 1px solid #3366CC;
+	background: white !important;
 }
-.tt-hint {
-	color: #999999;
+
+.stylish-input-group-no-lfb .form-control {
+	border-right: 1;
+	padding-right: 0;
+	box-shadow: 0 0 0;
+	border-color: #3366CC;
+	box-shadow: 0 0 0;
 }
-.tt-dropdown-menu {
-	background-color: #FFFFFF;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 8px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	margin-top: 12px;
-	padding: 8px 0;
-	width: 422px;
+
+.stylish-input-group-no-lfb button {
+	border: 0;
+	background: transparent;
 }
-.tt-suggestion {
-	font-size: 24px;
-	line-height: 24px;
+
+/*Change search drop-down colour to blue - for search page*/
+.ui-autocomplete {
+	border-color: #3366CC !important;
+}
+
+.input-large {
+	width: 350px !important;
+}
+
+.blueBorderDiv {
+	border: 1px solid #a1a1a1;
+	border-radius: 5px;
+	border-color: #819FF7 !important;
 	padding: 3px 20px;
 }
-.tt-suggestion.tt-is-under-cursor {
-	background-color: #0097CF;
-	color: #FFFFFF;
+
+.searchPlus:hover{
+	cursor: pointer;
 }
-.tt-suggestion p {
-	margin: 0;
+#hiddenDiv {
+	display:none;
 }

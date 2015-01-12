@@ -10,8 +10,8 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a href="#" class="nav-justified"><img
-				src="../images/bsgLogo.jpg"></a>
+			<a href="#" class="nav-justified">
+			<img src="../images/bsgLogo.jpg"></a>
 		</div>
 		<!-- Collection of nav links and other content for toggling -->
 		<div id="navbar" class="navbar-collapse collapse">
@@ -19,16 +19,28 @@
 				<li><a href="../user/home"><span
 						class="glyphicon glyphicon-home" data-toggle="tooltip"
 						data-placement="bottom" title="Home"></span></a></li>
-				<li><a href="#"><span
-						class="glyphicon glyphicon-retweet"></span> Communications</a></li>
-				<li><a href="#"><span
-						class="glyphicon glyphicon-eye-open"></span> Customer View</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-retweet"></span>
+						Communications</a></li>
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"><span
-						class="glyphicon glyphicon-dashboard"></span>  FCH
-						Services <span class="caret"></span>
+						class="glyphicon glyphicon-cog"></span>&nbsp;Setting<span class="caret"></span>
 				</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="../user/operator"><i class="fa fa-wifi"></i>&nbsp;Operator - IO</a></li>
+						<li><a href="../user/bank"><i class="fa fa-university"></i>&nbsp;Bank - IO</a></li>
+						<li><a href="#"><i class="fa fa-user"></i>&nbsp;Bank Account - IO</a></li>
+						<li><a href="#"><i class="fa fa-suitcase"></i>&nbsp;Roaming Agreement - EI</a></li>
+						<li><a href="#"><i class="fa fa-key"></i>&nbsp;Authentication Setup - IO</a></li>
+						<li><a href="../user/client"><span class="glyphicon glyphicon-th-list"></span> Client - IO</a></li>
+						<li><a href="#"><i class="fa fa-gears"></i>&nbsp;Setup Audit - IO</a></li>
+					</ul></li>
+
+
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false"><span
+						class="glyphicon glyphicon-dashboard"></span> FCH Services <span
+						class="caret"></span> </a>
 					<ul class="dropdown-menu" role="menu">
 
 						<!-- Start of submenu debtor -->
@@ -95,9 +107,8 @@
 
 				<li class="dropdown"><a href="#" class="dropdown-toggle"
 					data-toggle="dropdown" role="button" aria-expanded="false"><span
-						class="glyphicon glyphicon-bullhorn"></span> IOT
-						Services <span class="caret"></span>
-				</a>
+						class="glyphicon glyphicon-bullhorn"></span> IOT Services <span
+						class="caret"></span> </a>
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="#">IOT Calculations</a></li>
 						<li><a href="#">IOT Settlements</a></li>
@@ -128,9 +139,10 @@
 						class="glyphicon glyphicon-user"></span> My Account <span
 						class="caret"></span> </a>
 					<ul class="dropdown-menu" role="menu">
-						<li><a href="../user/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+						<li><a href="../user/search"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+						<li><a href="../user/search"><span class="glyphicon glyphicon-eye-open"></span> Customer View</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Help</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-off"></span> Signout</a></li>
+						<li><a href="../"><span class="glyphicon glyphicon-off"></span>	Signout</a></li>
 					</ul></li>
 			</ul>
 		</div>

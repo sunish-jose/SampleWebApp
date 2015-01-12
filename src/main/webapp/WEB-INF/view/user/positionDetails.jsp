@@ -2,21 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link href="favicon.ico" rel="shortcut icon" >
+<link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link href="../css/styles.css" rel="stylesheet">
-<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
-<script src="../js/Chart.js"></script>
-<script src="../js/script.js"></script>
+<%@include file="../headerResource.jsp"%>
 </head>
 <body>
 
@@ -25,7 +14,8 @@
 	<div class="container">
 		<div class="table-responsive">
 			<h3>Position Admin</h3>
-			<table class="table table-bordered table-striped table-hover table-curved"
+			<table
+				class="table table-bordered table-striped table-hover table-curved"
 				id="positionDetails">
 				<tbody>
 					<tr>
@@ -106,7 +96,12 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Transaction Details</h4>
+					<h4 class="modal-title">
+						<span class="fa-stack fa-lg"><i
+							class="fa fa-square-o fa-stack-2x"></i> <i
+							class="fa fa-usd fa-stack-1x"></i>
+						</span> Transaction Details
+					</h4>
 				</div>
 				<div class="modal-body">
 					<div class="table-responsive">
@@ -189,7 +184,9 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Notes</h4>
+					<h4 class="modal-title">
+						<i class="fa fa-book fa-2x"></i>&nbsp;Notes
+					</h4>
 				</div>
 				<div class="modal-body">
 					<table class="table table-bordered table-striped table-hover">
@@ -235,7 +232,6 @@
 			}
 		});
 	</script>
-
 	<%@include file="../footer.jsp"%>
 </body>
 </html>

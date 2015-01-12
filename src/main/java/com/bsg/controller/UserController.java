@@ -31,8 +31,13 @@ public class UserController extends BaseController {
 	}
 	
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public String search() {
+	public String chat() {
 		return "user/search";
+	}
+	
+	@RequestMapping(value = "/chat", method = RequestMethod.GET)
+	public String search() {
+		return "user/chat";
 	}
 	
 	@RequestMapping(value = "/funding", method = RequestMethod.GET)
@@ -40,9 +45,9 @@ public class UserController extends BaseController {
 		return "user/funding";
 	}
 	
-	@RequestMapping(value = "/settings", method = RequestMethod.GET)
+	@RequestMapping(value = "/operator", method = RequestMethod.GET)
 	public String showSettings() {
-		return "user/settings";
+		return "user/operator";
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, params="newUser")
@@ -68,6 +73,16 @@ public class UserController extends BaseController {
 	public String showPositionDetails(Model model){
 		model.addAttribute(new User());
 		return "user/positionDetails";
+	}
+	
+	@RequestMapping(value = "/bank", method = RequestMethod.GET)
+	public String bankAccountIO() {
+		return "user/bank";
+	}
+	
+	@RequestMapping(value = "/client", method = RequestMethod.GET)
+	public String customerModule() {
+		return "user/client";
 	}
 	
 	@RequestMapping(method=RequestMethod.POST)

@@ -4,18 +4,7 @@
 <meta charset="UTF-8">
 <link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<link href="../css/styles.css" rel="stylesheet">
-<link href="../css/sticky-footer-navbar.css" rel="stylesheet">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-<script src="../js/Chart.js"></script>
+<%@include file="../headerResource.jsp"%>
 </head>
 <body>
 

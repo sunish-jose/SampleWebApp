@@ -12,14 +12,24 @@
 <meta name="description" content="">
 
 <!-- Mobile viewport optimized -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<%@include file="headerResource.jsp"%>
-<script src="js/modernizr-2.6.2.min.js"></script>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Bootstrap CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-glyphicons.css" rel="stylesheet">
 <link href="css/signin.css" rel="stylesheet">
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet">
+<!-- Custom CSS -->
+<link href="css/styles.css" rel="stylesheet">
+
+<!-- Include Modernizr in the head, before any other Javascript -->
+<script src="js/modernizr-2.6.2.min.js"></script>
 
 </head>
-<body class="bodyGrade">
-	<!-- 
+<body>
 	<div class="container borderedDiv">
 		<form class="form-signin" role="form" name="loginForm" action="user/home" method='GET'>
 			<div class="container">
@@ -37,33 +47,6 @@
 			<a href="#">Forgot Password</a>
 		</form>
 	</div>
- -->
-	<div class="container borderedDiv">
-		<form name="loginForm"
-			action="user/home" method='GET'>
-			<img alt="BSG Wireless" src="images/bsgLogo.jpg">
-			<h3 class="form-signin-heading">BSG Financial Clearing Portal</h3>
-			<div class="input-group margin-bottom-sm">
-				<span class="input-group-addon"><i
-					class="fa fa-user fa-fw colorUserPwd"></i></span> <input class="form-control"
-					type="text" placeholder="Username/E-mail address">
-			</div>
-			<div class="input-group">
-				<span class="input-group-addon"><i class="fa fa-lock fa-fw colorUserPwd"></i></span>
-				<input class="form-control" type="password" placeholder="Password">
-			</div>
-
-			<div class="checkbox">
-				<label><input type="checkbox" value="remember-me">Remember
-					me</label>
-			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in&nbsp;<i class="fa fa-sign-in fa-lg"></i></button>
-			<a href="#">Forgot Password</a>
-		</form>
-	</div>
-
-
 	<!-- /container -->
 	<!-- First try for the online version of jQuery-->
 	<script src="http://code.jquery.com/jquery.js"></script>

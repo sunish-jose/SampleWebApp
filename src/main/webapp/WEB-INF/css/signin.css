@@ -1,17 +1,26 @@
-body {
+.bodyGrade {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	background-color: #CEE3F6;
 	/*gradient */
-background: rgb(240,249,255); /* Old browsers */
-background: -moz-linear-gradient(left,  rgba(240,249,255,1) 0%, rgba(203,235,255,1) 47%, rgba(161,219,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(240,249,255,1)), color-stop(47%,rgba(203,235,255,1)), color-stop(100%,rgba(161,219,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* IE10+ */
-background: linear-gradient(to right,  rgba(240,249,255,1) 0%,rgba(203,235,255,1) 47%,rgba(161,219,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', endColorstr='#a1dbff',GradientType=1 ); /* IE6-9 */
-
+	background: rgb(240, 249, 255); /* Old browsers */
+	background: -moz-linear-gradient(left, rgba(240, 249, 255, 1) 0%,
+		rgba(203, 235, 255, 1) 47%, rgba(161, 219, 255, 1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(240,
+		249, 255, 1)), color-stop(47%, rgba(203, 235, 255, 1)),
+		color-stop(100%, rgba(161, 219, 255, 1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(240, 249, 255, 1) 0%,
+		rgba(203, 235, 255, 1) 47%, rgba(161, 219, 255, 1) 100%);
+	/* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(240, 249, 255, 1) 0%,
+		rgba(203, 235, 255, 1) 47%, rgba(161, 219, 255, 1) 100%);
+	/* Opera 11.10+ */
+	background: -ms-linear-gradient(left, rgba(240, 249, 255, 1) 0%,
+		rgba(203, 235, 255, 1) 47%, rgba(161, 219, 255, 1) 100%); /* IE10+ */
+	background: linear-gradient(to right, rgba(240, 249, 255, 1) 0%,
+		rgba(203, 235, 255, 1) 47%, rgba(161, 219, 255, 1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff',
+		endColorstr='#a1dbff', GradientType=1); /* IE6-9 */
 }
 
 .form-signin {
@@ -62,6 +71,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f9ff', end
 	border-radius: 5px;
 	box-shadow: 5px 5px 5px #888888;
 	background-color: #FFF;
+	padding-top: 25px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px
 }
-
-
+.colorUserPwd{
+	color:#0033CC;
+}
