@@ -21,13 +21,13 @@
 			<div class="col-sm-3">
 				<!-- right side navigation -->
 				<div class="bodypadding">
-					<a href="#" class="list-group-item"><span
+					<a href="#" class="list-group-item blueBorder"><span
 						class="glyphicon glyphicon-lock"></span> Lock Payments </a> <a
-						href="#" class="list-group-item"> <span
+						href="#" class="list-group-item blueBorder"> <span
 						class="glyphicon glyphicon-file"></span> Create Funding Invoice
-					</a> <a href="#" class="list-group-item"> <span
+					</a> <a href="#" class="list-group-item blueBorder"> <span
 						class="glyphicon glyphicon-star-empty"></span> Add to Favourites
-					</a> <a href="#" class="list-group-item"> <span
+					</a> <a href="#" class="list-group-item blueBorder"> <span
 						class="glyphicon glyphicon-usd"></span> Show me FX rates
 					</a>
 				</div>

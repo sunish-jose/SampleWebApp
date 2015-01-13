@@ -85,6 +85,12 @@ public class UserController extends BaseController {
 		return "user/client";
 	}
 	
+	
+	@RequestMapping(value = "/index1", method = RequestMethod.GET)
+	public String showNewIndex() {
+		return "user/index1";
+	}
+	
 	@RequestMapping(method=RequestMethod.POST)
 	public String addNewUser(@Valid User user, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {

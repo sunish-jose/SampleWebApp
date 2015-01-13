@@ -24,6 +24,8 @@
 
 		$('#roamingPatPopup').click(function() {
 			$("#modalRoamingPatnersLists").modal('show');
+			var content =  $('#clientFilter').text();
+			 $('#clientFilterRmPat').html(content);			
 		});
 
 		$('#trafficPeriodPopu').click(function() {
@@ -33,6 +35,8 @@
 		$('#clientNext').click(function() {
 			$("#modalClientLists").modal('hide');
 			$("#modalRoamingPatnersLists").modal('show');
+			var content =  $('#clientFilter').text();
+			 $('#clientFilterRmPat').html(content);
 		});
 
 		$('#roamPartnerNext').click(function() {
@@ -49,24 +53,250 @@
 			$("#modalTrafficPeriod").modal('hide');
 			$("#modalRoamingPatnersLists").modal('show');
 		});
-		i=0;
 		
-		$("#c1").on('change', function() { 
+		var i=1;
+		
+		$("#c1").on('change', function() {
 			lab1=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c1').attr('checked', false);
+			 }else {
 			 if (this.checked) {
+				 i++;
 				 lab1= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab1">'+lab1+'&nbsp;</span>');
 			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab1').remove();
+			 }
+		}
+		});
+		
+		$("#c2").on('change', function() {
+			lab2=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c2').attr('checked', false);
+			 }	else {		
+			 if (this.checked) {
+				 i++;
+				 lab2= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab2">'+lab2+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab2').remove();
+			 }
 			 }
 		});
 		
-		$("#c2").on('change', function() { 
-			lab2=null;
+		$("#c3").on('change', function() {
+			lab3=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c3').attr('checked', false);
+			 }else {
 			 if (this.checked) {
-				 lab2= $(this).next('label').text();
+				 i++;
+				 lab3= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab3">'+lab3+'&nbsp;</span>');
 			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab3').remove();
+			 }
+		}
+		});
+		
+		$("#c4").on('change', function() {
+			lab4=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c4').attr('checked', false);
+			 }else {
+			 if (this.checked) {
+				 i++;
+				 lab4= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab4">'+lab4+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab4').remove();
+			 }
+			 }
+		});
+		
+		$("#c5").on('change', function() {
+			lab5=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c5').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab5= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab5">'+lab5+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab5').remove();
+			 }
 			 }
 		});
 
+		$("#c6").on('change', function() {
+			lab6=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c6').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab6= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab6">'+lab6+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab6').remove();
+			 }
+			 }
+		});
+		
+		$("#c7").on('change', function() {
+			lab7=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c7').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab7= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab7">'+lab7+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab7').remove();
+			 }
+			 }
+		});
+		$("#c8").on('change', function() {
+			lab8=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c8').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab8= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab8">'+lab8+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab8').remove();
+			 }
+			 }
+		});
+		
+		$("#c9").on('change', function() {
+			lab9=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c9').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab9= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab9">'+lab9+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab9').remove();
+			 }
+			 }
+		});
+		
+		$("#c10").on('change', function() {
+			lab10=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c10').attr('checked', false);
+			 }else{
+			 if (this.checked) {
+				 i++;
+				 lab10= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab10">'+lab10+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab10').remove();
+			 }
+			 }
+		});	
+
+		$("#c11").on('change', function() {
+			alert(i);
+			lab11=null;
+			 if(i>10){
+				 alert("No more selections allowed");
+				 $('#c11').attr('checked', false);
+			 } else {
+			 if (this.checked) {
+				 i++;
+				 lab11= $(this).next('label').text();
+				 $('#clientFilter').append('<span id="lab11">'+lab11+'&nbsp;</span>');
+			 } else {
+				 i--;
+				 $('#clientFilter').find('#lab11').remove();
+			 }
+			 }
+		});
+		
+		var j=1;
+		$("#rm1").on('change', function() {
+			rmlab1=null;
+			 if(j>10){
+				 alert("No more selections allowed");
+				 $('#rm1').attr('checked', false);
+			 }else {
+			 if (this.checked) {
+				 j++;
+				 rmlab1= $(this).next('label').text();
+				 $('#rmptFilter').append('<span id="rmlab1">'+rmlab1+'&nbsp;</span>');
+			 } else {
+				 j--;
+				 $('#rmptFilter').find('#rmlab1').remove();
+			 }
+		}
+		});
+		
+		var j=1;
+		$("#rm2").on('change', function() {
+			rmlab2=null;
+			 if(j>10){
+				 alert("No more selections allowed");
+				 $('#rm2').attr('checked', false);
+			 }else {
+			 if (this.checked) {
+				 j++;
+				 rmlab2= $(this).next('label').text();
+				 $('#rmptFilter').append('<span id="rmlab1">'+rmlab2+'&nbsp;</span>');
+			 } else {
+				 j--;
+				 $('#rmptFilter').find('#rmlab2').remove();
+			 }
+		}
+		});
+		
+		var j=1;
+		$("#rm3").on('change', function() {
+			rmlab3=null;
+			 if(j>10){
+				 alert("No more selections allowed");
+				 $('#rm3').attr('checked', false);
+			 }else {
+			 if (this.checked) {
+				 j++;
+				 rmlab3= $(this).next('label').text();
+				 $('#rmptFilter').append('<span id="rmla31">'+rmlab3+'&nbsp;</span>');
+			 } else {
+				 j--;
+				 $('#rmptFilter').find('#rmlab3').remove();
+			 }
+		}
+		});		
+		
 	});
 </script>
 <style type="text/css">
@@ -161,16 +391,11 @@ overflow-x:hidden;
 				<!-- Modal header ends -->
 
 				<div class="modal-body">
-				
-			<div class="row">
-				<div class="col-md-12" >
-					<div id="clientFilter" class="hiddenDiv">
-					
+					<h4>Selected clients</h4>
+					<div id="clientFilter" class="titleAtBorder">
 					</div>
-				</div>
-			</div>
 				
-				<div class="FixedHeightContainer">
+				<div class="FixedHeightContainer topPaddingLarge">
 				  <div class="Content">
 					<div class="row">
 						<div class="col-md-2">
@@ -408,7 +633,13 @@ overflow-x:hidden;
 				</div>
 				<!-- Modal header -->
 				<div class="modal-body">
-				<div class="FixedHeightContainer">
+				<h4>Selected Clientes</h4>
+					<div id="clientFilterRmPat" class="titleAtBorder">
+					</div>
+				<h4>Selected Roaming Partners</h4>
+					<div id="rmptFilter" class="titleAtBorder">
+					</div>
+				<div class="FixedHeightContainer topPaddingLarge">
 				  <div class="Content">				
 					<div class="row">
 						<div class="col-md-2">
@@ -689,7 +920,17 @@ overflow-x:hidden;
 					</h4>
 				</div>
 				<!-- Modal header -->
-				<div class="modal-body"></div>
+				<div class="modal-body">
+				<h4>Start</h4>
+				<select class="form-control">
+				  <option>1</option>
+				  <option>2</option>
+				  <option>3</option>
+				  <option>4</option>
+				  <option>5</option>
+				</select>
+				<h4>End</h4>
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary"
