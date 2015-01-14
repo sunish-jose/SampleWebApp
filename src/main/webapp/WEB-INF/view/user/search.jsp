@@ -75,7 +75,6 @@
 				$("#lastName").val(ui.item.lastName);
 				$("#email").val(ui.item.email);
 				$("#age").val(ui.item.age);
-
 			}
 		});
 	});

@@ -67,7 +67,7 @@
 									<option>Swift Code</option>
 									<option>CHIPS UID</option>
 									<option>ABS Code</option>
-							</select></span> <span class="input-group-addon">
+							</select></span><span class="input-group-addon">
 								<button type="submit"><span class="glyphicon glyphicon-search"></span></button></span>
 						</div>
 					</form>

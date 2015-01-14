@@ -331,6 +331,36 @@ hr {
 	background: transparent;
 }
 
+/*for the client operator*/
+.stylish-input-groupOper .input-group-addon {
+	border: 1px solid #3366CC;
+	background: white !important;
+}
+
+.stylish-input-groupOper .input-group-btn {
+	border: 0px solid #3366CC;
+	background: white !important;
+}
+
+.stylish-input-groupOper .form-control {
+	border-right: 0;
+	padding-right: 0;
+	box-shadow: 0 0 0;
+	border-color: #3366CC;
+	box-shadow: 0 0 0;
+}
+
+.stylish-input-groupOper button {
+	border: 0px;
+	background: transparent;
+}
+
+.stylish-input-groupOper btn {
+	border: 1px solid #3366CC;
+	background: transparent;
+}
+
+/*operator page - ends */
 .stylish-input-group-no-lfb .input-group-addon {
 	borde-left: 0px;
 	border-right: 1px solid #3366CC;
@@ -366,7 +396,7 @@ hr {
 }
 
 .input-large {
-	width: 350px !important;
+	width: 450px !important;
 }
 
 .blueBorderDiv {
@@ -387,36 +417,47 @@ hr {
 /*div with title at border*/
 .titleAtBorder {
 	color: #3366CC;
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
 	border: 1px solid #3366CC;
 	width: 100%;
 	height: 30px;
 }
+
 .searchResults {
-	padding:50px;
-}
-.clientTile{
-	
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-	border: 1px solid #fff;
-	height:240px;
-	width:200px;
-	border-color: #fff !important;	
+	padding: 50px;
 }
 
-.clientTileBigBorder {
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-	border: 2px solid #CCCC00;
-	height:240px;
-	width:200px;
+.clientTile {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+	border: 1px solid #fff;
+	height: 240px;
+	width: 200px;
+	border-color: #fff !important;
+}
+
+.clientTile:hover {
+	border: 1px solid #CCCC00;
+	height: 240px;
+	width: 200px;
 	cursor: pointer;
+	border-color: #CCCC00 !important;
 }
-.clientTopRight{
-	text-align:right;
+
+.clientTopRight {
+	text-align: right;
 }
+
 .bottomBorderDiv {
 	border-bottom: 1px solid #3366CC;
 }
-._pointer:hover{
+
+._pointer:hover {
 	cursor: pointer;
+}
+
+.fontSmall {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	size: 2;
 }

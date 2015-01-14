@@ -171,7 +171,6 @@
 							<button type="button" class="btn btn-primary btn-xs">Add Address</button></p>
 						</div>
 					</div>
-					<hr>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="bankAccount">Bank Account&nbsp;<i
@@ -239,7 +238,6 @@
 						</div>
 					</div>
 					<!-- Bank account div ends -->
-					<hr>
 					<div class="row">
 						<div class="col-md-12">
 							<label for="address">Contacts&nbsp;<i
@@ -301,6 +299,7 @@
 							<button type="button" class="btn btn-primary btn-xs">Add Contact</button></p>
 						</div>
 					</div>
+					
 					<!-- contact div ends -->
 					<!-- Operator div ending -->
 				</div>
