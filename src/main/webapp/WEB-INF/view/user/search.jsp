@@ -7,7 +7,8 @@
 
 <%@include file="../headerResource.jsp"%>
 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="../js/jquery-ui.min.js"></script>
 <script>
 	$(document).ready(function() {
@@ -68,7 +69,7 @@
 		} ];
 		$('#autocomplete').autocomplete({
 			source : users,
-			minLength: 2,
+			minLength : 2,
 			select : function(event, ui) {
 				$("#modalUserDetails").modal('show');
 				$("#firstName").val(ui.item.firstName);
@@ -89,6 +90,19 @@
 			<li class="active">Search</li>
 		</ol>
 
+		<div class="blueBorderDiv">
+			<div class="row bottomBorderDiv">
+				<div class="col-md-6">
+					<div id="clientTopDiv">
+						<div class="cientTopLeft">
+							<h4>
+								<i class="fa fa-search fa-2x"></i>&nbsp;Search
+							</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		<div class="searchContainer">
 			<div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
@@ -103,10 +117,13 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6 col-sm-offset-3">
-					<div id="autocomplete-suggestions"></div>
-				</div>
 			</div>
+		</div>
+			<div class="row searchResults" id="searchResults">
+				<div class="col-md-6">
+					<div id="searchResultPlaceHolder" class="clientTile"></div>
+				</div>
+			</div>		
 		</div>
 	</div>
 

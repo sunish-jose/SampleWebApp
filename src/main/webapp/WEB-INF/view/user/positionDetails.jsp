@@ -6,6 +6,8 @@
 <title>BSG Financial Clearing Portal</title>
 
 <%@include file="../headerResource.jsp"%>
+		
+
 </head>
 <body>
 
@@ -20,7 +22,7 @@
 				<tbody>
 					<tr>
 						<th>Partner</th>
-						<th>Trading Code</th>
+						<th>Tadig Code</th>
 						<th>Service Type</th>
 						<th>Traffic Period</th>
 						<th>Settlement Type</th>

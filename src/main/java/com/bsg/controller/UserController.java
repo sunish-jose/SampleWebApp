@@ -91,6 +91,16 @@ public class UserController extends BaseController {
 		return "user/index1";
 	}
 	
+	@RequestMapping(value = "/authSetup", method = RequestMethod.GET)
+	public String authSetup() {
+		return "user/authSetup";
+	}
+	
+	@RequestMapping(value = "/debtChasing", method = RequestMethod.GET)
+	public String debtChasing() {
+		return "user/debtChasing";
+	}	
+	
 	@RequestMapping(method=RequestMethod.POST)
 	public String addNewUser(@Valid User user, BindingResult bindingResult) {
 		if(bindingResult.hasErrors()) {

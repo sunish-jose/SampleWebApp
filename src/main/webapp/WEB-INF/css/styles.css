@@ -406,6 +406,12 @@ hr {
 	padding: 3px 20px;
 }
 
+.whiteBorderDiv {
+	border: 1px solid #FFF;
+	border-color: #FFF !important;
+	padding: 20px 20px;
+}
+
 .searchPlus:hover {
 	cursor: pointer;
 }
@@ -435,6 +441,7 @@ hr {
 	height: 240px;
 	width: 200px;
 	border-color: #fff !important;
+	padding: 6px 6px;
 }
 
 .clientTile:hover {
@@ -460,4 +467,18 @@ hr {
 .fontSmall {
 	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
 	size: 2;
+}
+
+.customTable tbody th {
+	color: #FFF;
+	background-color: #0044cc;!important;
+	border-color: #99CCF0 !important;
+}
+
+.customTable tbody td {
+	border-color: #99CCF0 !important;
+}
+/*Cycle Calendar*/
+.hoveringTable tr:hover {
+	cursor: pointer;
 }
