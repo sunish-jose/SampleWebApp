@@ -99,6 +99,26 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/debtChasing", method = RequestMethod.GET)
 	public String debtChasing() {
 		return "user/debtChasing";
+	}
+	
+	@RequestMapping(value = "/collectionNallocation", method = RequestMethod.GET)
+	public String collectionAndAllocaion() {
+		return "user/collectionNallocation";
+	}	
+	
+	@RequestMapping(value = "/receiptNallocation", method = RequestMethod.GET)
+	public String receiptAndAllocaion() {
+		return "user/receiptNallocation";
+	}	
+	
+	@RequestMapping(value = "/agreement", method = RequestMethod.GET)
+	public String agreement() {
+		return "user/agreement";
+	}
+	
+	@RequestMapping(value = "/invoiceReconciliation", method = RequestMethod.GET)
+	public String invoiceReconciliation() {
+		return "user/invoiceReconciliation";
 	}	
 	
 	@RequestMapping(method=RequestMethod.POST)

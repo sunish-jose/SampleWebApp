@@ -30,7 +30,7 @@
 						<li><a href="../user/operator"><i class="fa fa-wifi"></i>&nbsp;Operator - IO</a></li>
 						<li><a href="../user/bank"><i class="fa fa-university"></i>&nbsp;Bank - IO</a></li>
 						<li><a href="#"><i class="fa fa-user"></i>&nbsp;Bank Account - IO</a></li>
-						<li><a href="#"><i class="fa fa-suitcase"></i>&nbsp;Roaming Agreement - EI</a></li>
+						<li><a href="../user/agreement"><i class="fa fa-suitcase"></i>&nbsp;Roaming Agreement - EI</a></li>
 						<li><a href="../user/authSetup"><i class="fa fa-key"></i>&nbsp;Authentication Setup - IO</a></li>
 						<li><a href="../user/client"><i class="fa fa-user"></i>&nbsp;Client - IO</a></li>
 						<li><a href="#"><i class="fa fa-gears"></i>&nbsp;Setup Audit - IO</a></li>
@@ -49,8 +49,8 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="../user/debtorsSummary">Debtors summary</a></li>
 								<li><a href="../user/debtChasing">Debt Chasing </a></li>
-								<li><a href="#">Collection and Allocations</a></li>
-								<li><a href="#">Receipt handling</a></li>
+								<li><a href="../user/collectionNallocation">Collection and Allocations</a></li>
+								<li><a href="../user/receiptNallocation">Receipt &#38; allocation handling</a></li>
 							</ul></li>
 
 						<!-- Start of submenu -->
@@ -69,7 +69,7 @@
 						<li class="dropdown-submenu"><a href="#">Reconciliation
 								&amp; Amendments</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">GSM Payable Invoice Reconciliation</a></li>
+								<li><a href="../user/invoiceReconciliation">GSM Payable Invoice Reconciliation</a></li>
 								<li><a href="#">CN/DN - invoice level</a></li>
 								<li><a href="#">Credit Note Application</a></li>
 							</ul></li>

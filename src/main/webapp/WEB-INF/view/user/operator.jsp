@@ -243,7 +243,7 @@
 					<div class="row topPaddingSmall">
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="bankName">Tadig Code</label> <input type="text"
+								<label for="tadigCode">Tadig Code</label> <input type="text"
 									class="form-control" id="tadigCode" placeholder="LAXYZ">
 							</div>
 						</div>
@@ -411,6 +411,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
 				</div>
 			</div>
 		</div>

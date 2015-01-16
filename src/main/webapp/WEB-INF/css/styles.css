@@ -431,7 +431,7 @@ hr {
 }
 
 .searchResults {
-	padding: 50px;
+	padding: 30px;
 }
 
 .clientTile {
@@ -469,15 +469,39 @@ hr {
 	size: 2;
 }
 
+.fontMedium {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	size: 4;
+}
+
 .customTable tbody th {
 	color: #FFF;
-	background-color: #0044cc;!important;
+	background-color: #305983!important;
 	border-color: #99CCF0 !important;
 }
 
 .customTable tbody td {
-	border-color: #99CCF0 !important;
+	border-color: #99CCF0;!important;
 }
+
+.plainTable {
+	border:1px solid #819FF7!important;
+	border-radius: 5px;
+	xborder-collapse: collapse;
+}
+
+.plainTable tbody th {
+	color: #000;
+	background-color: #FFFFFF!important;
+	border:1px solid #819FF7!important;
+}
+
+.plainTable tbody td {
+	color: #000;
+	background-color: #FFFFFF!important;
+	border:1px solid #819FF7!important;
+}
+
 /*Cycle Calendar*/
 .hoveringTable tr:hover {
 	cursor: pointer;
