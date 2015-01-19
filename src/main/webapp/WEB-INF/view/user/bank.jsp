@@ -16,7 +16,7 @@
 			<li class="active">Bank - IO</li>
 		</ol>
 		<div class="blueBorderDiv">
-			<h4><i class="fa fa-university fa-2x"></i>&nbsp;&nbsp;Bank - IO</h4>
+			<h4><i class="fa fa-university fa-lg"></i>&nbsp;&nbsp;Bank - IO</h4>
 			<hr>
 
 			<!-- 			<form>

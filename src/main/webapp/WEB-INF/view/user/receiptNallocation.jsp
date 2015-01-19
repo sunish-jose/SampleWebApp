@@ -5,8 +5,7 @@
 <link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
 <%@include file="../headerResource.jsp"%>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="../js/jquery-ui.min.js"></script>
 
 <script>
@@ -66,6 +65,7 @@
 				height : 250,
 				width : 350,
 				modal : true,
+				opacity: .70,
 				buttons : {
 					"Yes" : function() {
 						$(this).dialog("close");
@@ -153,7 +153,7 @@
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="../user/home">Home</a></li>
-			<li class="active">Collection &#38; Allocations</li>
+			<li class="active">Receipt &#38;	Allocation handling</li>
 		</ol>
 		<div class="blueBorderDiv">
 			<div class="row bottomBorderDiv">
@@ -161,7 +161,7 @@
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
 							<h4>
-								<i class="fa fa-money fa-2x"></i>&nbsp;&nbsp;Receipt &#38;
+								<i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;Receipt &#38;
 								Allocation handling
 							</h4>
 						</div>

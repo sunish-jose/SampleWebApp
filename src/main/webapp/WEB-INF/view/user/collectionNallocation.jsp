@@ -157,7 +157,7 @@ input[type="checkbox"]:checked ~ label:hover {
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
 							<h4>
-								<i class="fa fa-database fa-2x"></i>&nbsp;&nbsp;Collection &#38;
+								<i class="fa fa-database fa-lg"></i>&nbsp;&nbsp;Collection &#38;
 								Allocation
 							</h4>
 						</div>

@@ -56,7 +56,7 @@
 						<!-- Start of submenu -->
 						<li class="dropdown-submenu"><a href="#">Payment/Settlement</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Approval for Payments</a></li>
+								<li><a href="../user/paymentApproval">Approval for Payments</a></li>
 								<li><a href="../user/funding">Funding</a></li>
 								<li><a href="../user/payableSummary">Payable Summary</a></li>
 								<li><a href="#">Pre-Payment Calculation </a></li>
@@ -70,7 +70,7 @@
 								&amp; Amendments</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="../user/invoiceReconciliation">GSM Payable Invoice Reconciliation</a></li>
-								<li><a href="#">CN/DN - invoice level</a></li>
+								<li><a href="../user/creditDebitNote">Credit Note/Debit Note Entry</a></li>
 								<li><a href="#">Credit Note Application</a></li>
 							</ul></li>
 						<!-- end of submenu -->

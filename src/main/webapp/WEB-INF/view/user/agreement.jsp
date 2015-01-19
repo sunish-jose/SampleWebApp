@@ -130,7 +130,7 @@
 				<div class="col-md-6">
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
-							<h4><i class="fa fa-file-text fa-2x"></i>&nbsp;&nbsp;Roaming Agreement - IO</h4>
+							<h4><i class="fa fa-file-text fa-lg"></i>&nbsp;&nbsp;Roaming Agreement - IO</h4>
 						</div>
 					</div>
 				</div>

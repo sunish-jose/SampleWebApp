@@ -104,7 +104,7 @@
 			<div class="col-sm-12">
 				<h3>Payment Status</h3>
 				<div>
-					<canvas id="canvas"></canvas>
+					<canvas id="canvas1"></canvas>
 				</div>
 			</div>
 		</div>
@@ -122,7 +122,7 @@
 
 		}
 		window.onload = function() {
-			var ctx = document.getElementById("canvas").getContext("2d");
+			var ctx = document.getElementById("canvas1").getContext("2d");
 			window.myBar = new Chart(ctx).Bar(barChartData, {
 				responsive : true,
 				barValueSpacing : 60

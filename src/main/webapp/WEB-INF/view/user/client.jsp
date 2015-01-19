@@ -113,7 +113,7 @@
 				<div class="col-md-6">
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
-							<h4><i class="fa fa-user fa-2x"></i>&nbsp;&nbsp;Client - IO</h4>
+							<h4><i class="fa fa-user fa-lg"></i>&nbsp;&nbsp;Client - IO</h4>
 						</div>
 					</div>
 				</div>

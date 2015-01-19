@@ -12,9 +12,6 @@
 	<!-- navbar -->
 	<%@include file="../navbar.jsp"%>
 	<div class="container">
-		<ol class="breadcrumb">
-			<li class="active">Home</li>
-		</ol>
 		<div>
 			<h3>Cycle Calendar</h3>
 			<table

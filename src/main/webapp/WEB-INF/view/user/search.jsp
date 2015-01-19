@@ -96,7 +96,7 @@
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
 							<h4>
-								<i class="fa fa-search fa-2x"></i>&nbsp;Search
+								<i class="fa fa-search fa-lg"></i>&nbsp;Search
 							</h4>
 						</div>
 					</div>

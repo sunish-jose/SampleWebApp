@@ -119,6 +119,16 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/invoiceReconciliation", method = RequestMethod.GET)
 	public String invoiceReconciliation() {
 		return "user/invoiceReconciliation";
+	}
+	
+	@RequestMapping(value = "/creditDebitNote", method = RequestMethod.GET)
+	public String creditDebitNote() {
+		return "user/creditDebitNote";
+	}
+	
+	@RequestMapping(value = "/paymentApproval", method = RequestMethod.GET)
+	public String paymentApproval() {
+		return "user/paymentApproval";
 	}	
 	
 	@RequestMapping(method=RequestMethod.POST)

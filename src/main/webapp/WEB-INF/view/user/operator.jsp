@@ -182,7 +182,7 @@
 				<div class="col-md-6">
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
-							<h4><i class="fa fa-wifi fa-2x"></i>&nbsp;Operator - IO</h4>
+							<h4><i class="fa fa-wifi fa-lg"></i>&nbsp;Operator - IO</h4>
 						</div>
 					</div>
 				</div>

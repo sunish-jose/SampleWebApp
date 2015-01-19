@@ -90,8 +90,16 @@ body {
 	padding-top: 5px;
 }
 
+.topPaddingMedium {
+	padding-top: 25px;
+}
+
 .topPaddingLarge {
 	padding-top: 25px;
+}
+
+.topPaddingXLarge {
+	padding-top: 50px;
 }
 
 .dropdown-submenu {
@@ -465,44 +473,152 @@ hr {
 }
 
 .fontSmall {
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
 	size: 2;
 }
 
 .fontMedium {
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
 	size: 4;
 }
 
 .customTable tbody th {
 	color: #FFF;
-	background-color: #305983!important;
+	background-color: #305983 !important;
 	border-color: #99CCF0 !important;
 }
 
 .customTable tbody td {
-	border-color: #99CCF0;!important;
+	border-color: #99CCF0;
+	!
+	important;
 }
 
 .plainTable {
-	border:1px solid #819FF7!important;
+	border: 1px solid #819FF7 !important;
 	border-radius: 5px;
 	xborder-collapse: collapse;
 }
 
 .plainTable tbody th {
 	color: #000;
-	background-color: #FFFFFF!important;
-	border:1px solid #819FF7!important;
+	background-color: #FFFFFF !important;
+	border: 1px solid #819FF7 !important;
 }
 
 .plainTable tbody td {
 	color: #000;
-	background-color: #FFFFFF!important;
-	border:1px solid #819FF7!important;
+	background-color: #FFFFFF !important;
+	border: 1px solid #819FF7 !important;
 }
 
 /*Cycle Calendar*/
 .hoveringTable tr:hover {
 	cursor: pointer;
+}
+
+.IFrameDiv {
+	width: 100%;
+	height: 400px;
+}
+
+.divBottom {
+	position: relative;
+}
+
+.divBottom-content {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.paymentGrapgDiv {
+	width: 600px;
+	height: 350px;
+}
+
+.circleRed {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #D63333;
+}
+
+.circleBrown {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #801F1F;
+}
+
+.circleBlue {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #005CE6;
+}
+
+.circleGreen {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #33CC33;
+}
+.circleYello {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #FFCC00;
+}
+.circleAsh {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #C8C8DA;
+}
+.circleMagent {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #33CCCC;
+}
+.circlePink {
+	width: 150px;
+	height: 150px;
+	border-radius: 250px;
+	font-size: 18px;
+	color: #fff;
+	line-height: 150px;
+	text-align: center;
+	background: #CC00FF;
 }

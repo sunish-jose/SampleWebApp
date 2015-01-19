@@ -120,7 +120,7 @@ input[type="checkbox"]:checked ~ label:hover {
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
 							<h4>
-								<i class="fa fa-area-chart fa-2x"></i>&nbsp;&nbsp;Debt Chasing
+								<i class="fa fa-area-chart fa-lg"></i>&nbsp;&nbsp;Debt Chasing
 							</h4>
 						</div>
 					</div>

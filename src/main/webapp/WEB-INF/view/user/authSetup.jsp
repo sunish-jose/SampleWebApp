@@ -37,7 +37,7 @@
 				<div class="col-md-12">
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
-							<h4><i class="fa fa-key fa-2x"></i>&nbsp;&nbsp;Authentication Setup</h4>
+							<h4><i class="fa fa-key fa-lg"></i>&nbsp;&nbsp;Authentication Setup</h4>
 						</div>
 					</div>
 				</div>
@@ -117,7 +117,7 @@
 				<div class="col-md-12">
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
-							<h4><i class="fa fa-cubes fa-2x"></i>&nbsp;&nbsp;Modules</h4>
+							<h4><i class="fa fa-cubes fa-lg"></i>&nbsp;&nbsp;Modules</h4>
 						</div>
 					</div>
 				</div>
@@ -316,7 +316,7 @@
 						<button type="button" class="close" data-dismiss="modal"
 							aria-hidden="true">&times;</button>
 						<h4 class="modal-title">
-							<i class="fa fa-lock fa-3x"></i>&nbsp;&nbsp;Enter Your Password
+							<i class="fa fa-lock fa-lg"></i>&nbsp;&nbsp;Enter Your Password
 						</h4>
 					</div>
 					<!-- Modal header -->
