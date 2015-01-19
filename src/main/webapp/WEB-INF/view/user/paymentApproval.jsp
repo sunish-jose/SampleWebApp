@@ -22,8 +22,8 @@
 		// Some raw data (not necessarily accurate)
 		var data = google.visualization
 				.arrayToDataTable([
-						[ 'USD', 'GBP' ],
-						[ '', 165, 938 ], ]);
+						[ '', 'GBP', 'EUR', 'INR', 'JYP', 'ILS', 'HKD','SDR', 'FJD' ],
+						[ '', 165, 938, 522, 998, 450, 616, 800, 900 ], ]);
 
 		var options = {
 			title : '',
