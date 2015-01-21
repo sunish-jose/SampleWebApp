@@ -5,106 +5,24 @@
 <link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
 <%@include file="../headerResource.jsp"%>
-<link rel="stylesheet"
-	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="../js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
+
 <script>
-google.load("visualization", "1", {
-	packages : [ "corechart" ]
-});
-google.setOnLoadCallback(drawChart);
-function drawChart() {
+	$(document).ready(function() {
+		
+		$('#clientPopup').click(function() {
+			$("#modalClientLists").modal('show');
+		});
 
-       var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-         ['Reconcilied',     51],
-         ['Missing',      21],
-         ['Un-reconcilied',  28]
+		$('#roamingPatPopup').click(function() {
+			$("#modalRoamingPartnersLists").modal('show');
+		});
 
-       ]);
-
-       var options = {
-         title: 'Reconciliation Summary',
-         pieHole: 0.4,
-      
-       };
-
-       var chart = new google.visualization.PieChart(document.getElementById('invoiceStatistics'));
-       chart.draw(data, options);
-     }
-</script>
-<script>
-	$(document).ready(
-			function() {
-
-				$('#clientPopup').click(function() {
-					$("#modalClientLists").modal('show');
-				});
-
-				$('#roamingPatPopup').click(function() {
-					$("#modalRoamingPatnersLists").modal('show');
-				});
-
-				$('#outstandingRx tr').click(
-						function() {
-							$('#outstandingRxDiv')
-									.removeClass('whiteBorderDiv').addClass(
-											'hiddenDiv');
-							$('#modalOutstandingRx').modal('show');
-							$('#outstandingRxSave').hide();
-						});
-
-				$('#120Action').click(
-						function() {
-							$('#120ActionsDiv').removeClass('whiteBorderDiv')
-									.addClass('hiddenDiv');
-							$("#modal120Action").modal('show');
-							$('#120ActionSave').hide();
-						});
-
-				$('#500Action').click(
-						function() {
-							$('#500ActionsDiv').removeClass('whiteBorderDiv')
-									.addClass('hiddenDiv');
-							$("#modal500Action").modal('show');
-							$('#500ActionSave').hide();
-						});
-
-				$('#500Actions tr').click(
-						function() {
-							$('#500ActionsDiv').removeClass('hiddenDiv')
-									.addClass('whiteBorderDiv');
-							$('#500ActionSave').show();
-						});
-
-				$('#120ActionTab tr').click(
-						function() {
-							$('#120ActionsDiv').removeClass('hiddenDiv')
-									.addClass('whiteBorderDiv');
-							$('#120ActionSave').show();
-						});
-
-				$('#outstandingRxTab tr').click(
-						function() {
-							$('#outstandingRxDiv').removeClass('hiddenDiv')
-									.addClass('whiteBorderDiv');
-							$('#outstandingRxSave').show();
-						});
-
-				$("#datepicker500").datepicker({
-					dateFormat : "dd-mm-yy"
-				});
-
-				$("#datepicker120").datepicker({
-					dateFormat : "dd-mm-yy"
-				});
-
-				$("#datepickerOutstandingRx").datepicker({
-					dateFormat : "dd-mm-yy"
-				});
-
-			});
+		$('#trafficPopup').click(function() {
+			$("#modalTrafficLists").modal('show');
+		});
+	});
 </script>
 
 <style type="text/css">
@@ -151,7 +69,7 @@ input[type="checkbox"]:checked ~ label:hover {
 	<div class="container">
 		<ol class="breadcrumb">
 			<li><a href="../user/home">Home</a></li>
-			<li class="active">Debt Chasing</li>
+			<li class="active">Transaction Details</li>
 		</ol>
 		<div class="blueBorderDiv">
 			<div class="row bottomBorderDiv">
@@ -159,7 +77,7 @@ input[type="checkbox"]:checked ~ label:hover {
 					<div id="clientTopDiv">
 						<div class="cientTopLeft">
 							<h4>
-								<i class="fa fa-area-chart fa-lg"></i>&nbsp;&nbsp;Debt Chasing
+								<i class="fa fa-area-chart fa-lg"></i>&nbsp;&nbsp;Transaction Details
 							</h4>
 						</div>
 					</div>
@@ -167,471 +85,33 @@ input[type="checkbox"]:checked ~ label:hover {
 			</div>
 
 			<div class="row topPaddingLarge">
-				<div>
-				
-				<div class="col-md-6">
-
+				<div class="col-md-12">
 					<h4>
 						<label for="bankName">Select the Clients</label>&nbsp;<i
 							class="fa fa-plus-square searchPlus" id="clientPopup"></i>
 					</h4>
-
-					<h4>
-						<label for="bankName">Select the Roaming Partners&nbsp;<i
-							class="fa fa-plus-square searchPlus" id="roamingPatPopup"></i>
-						</label>
-					</h4>
-
-				</div>
-
-				<div class="col-md-6">
-
-					<div id="invoiceStatistics"></div>
-
-				</div>
-
 				</div>
 				<div class="col-md-12">
 					<h4>
-						<label>Outstanding Receivables (Net Receiver)</label>
+						<label for="bankName">Select the Roaming Partners</label>&nbsp;<i
+							class="fa fa-plus-square searchPlus" id="roamingPatPopup"></i>
 					</h4>
-					<table
-						class="table table-bordered table-striped table-hover table-curved"
-						id="outstandingRx">
-						<tbody>
-							<tr>
-								<th>Currency</th>
-								<th>&lt;&nbsp;30 Days</th>
-								<th>&gt;&nbsp;30 Days</th>
-								<th>&gt;&nbsp;60 Days</th>
-								<th>&gt;&nbsp;90 Days</th>
-								<th>&gt;&nbsp;120 Days</th>
-								<th>Total</th>
-							</tr>
-							<tr>
-								<td>USD</td>
-								<td>125253.23</td>
-								<td>521325.23</td>
-								<td>2222.25</td>
-								<td>1000</td>
-								<td>600</td>
-								<td>625369.23</td>
-							</tr>
-							<tr>
-								<td>EUR</td>
-								<td>256877.22</td>
-								<td>136666.22</td>
-								<td>15000.25</td>
-								<td>7500.26</td>
-								<td>3569.25</td>
-								<td>596325.23</td>
-							</tr>
-						</tbody>
-					</table>
+				</div>
+
+				<div class="col-md-12">
+					<h4>
+						<label for="bankName">Select the Traffic Periods</label>&nbsp;<i
+							class="fa fa-plus-square searchPlus" id="trafficPopup"></i>
+					</h4>
 				</div>
 
 				<div class="col-md-6 topPaddingLarge bodypadding">
-					<button type="button" id="120Action"
-						class="btn btn-primary btn-danger">
-						120 Actions need to be taken&nbsp;<span
-							class="glyphicon glyphicon-new-window">&nbsp;</span>
+					<button type="button" id="txb1" class="btn btn-primary">
+					Position Admin&nbsp;
+					<span class="glyphicon glyphicon-new-window">&nbsp;</span>
 					</button>
 				</div>
 
-				<div class="col-md-6 topPaddingLarge bodypadding">
-					<button type="button" id="500Action" class="btn  btn-success">
-						500 Actions in progress&nbsp;<span
-							class="glyphicon glyphicon-new-window">&nbsp;</span>
-					</button>
-				</div>
-			</div>
-		</div>
-
-		<div id="modal500Action" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content modal-lg">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">
-							<i class="fa fa-money fa-2x"></i>&nbsp;Action in progress
-						</h4>
-					</div>
-					<div class="modal-body">
-						<div class="table-responsive">
-							<table
-								class="table table-bordered table-striped table-curved hoveringTable"
-								id="500Actions">
-								<tbody>
-									<tr>
-										<th>Partner</th>
-										<th>Tadig Code</th>
-										<th>Service Type</th>
-										<th>Traffic Period</th>
-										<th>Settlement Type</th>
-										<th>Net SDR</th>
-										<th>Net Amount</th>
-										<th>Currency</th>
-										<th>Due Date</th>
-										<th>Position Type</th>
-										<th>Action due date</th>
-										<th>Notes</th>
-
-
-									</tr>
-									<tr>
-										<td>AAAAAA</td>
-										<td>GBRCN</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>10000.25</td>
-										<td>16,263.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td>12/02/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>BBBBBBBB</td>
-										<td>DEUE2</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td>12/02/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>CCCCCCC</td>
-										<td>AIACW</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>9000.25</td>
-										<td>8526.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td>12/02/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>DDDDDD</td>
-										<td>AUTMM</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td>12/02/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-						<div class="row topPaddingLarge hiddenDiv" id="500ActionsDiv">
-							<div class='col-md-12'>
-								<div class="form-group">
-									<label for="action">Current Action</label> <select id="action"
-										class="form-control">
-										<option>Email to the RP and waiting for response</option>
-										<option>Telephone no action - Next Action date</option>
-										<option>Telephon and payment promised to happen on
-											19/May/2015 and - next action date</option>
-									</select>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="action">Comments</label>
-									<textarea class="form-control" rows="3"></textarea>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="nextActionDate">Next Action Date</label> <input
-										type='text' id="datepicker500" placeholder='13/01/2015'
-										class="form-control" />
-								</div>
-							</div>
-							<div class='col-md-12'></div>
-						</div>
-
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"
-							id="500ActionSave">Save</button>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-		<div id="modal120Action" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content modal-lg">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">
-							<i class="fa fa-money fa-2x"></i>&nbsp; Action need to be taken
-						</h4>
-					</div>
-					<div class="modal-body">
-						<div class="table-responsive">
-							<table
-								class="table table-bordered table-striped table-curved hoveringTable"
-								id="120ActionTab">
-								<tbody>
-									<tr>
-										<th>Partner</th>
-										<th>Tadig Code</th>
-										<th>Service Type</th>
-										<th>Traffic Period</th>
-										<th>Settlement Type</th>
-										<th>Net SDR</th>
-										<th>Net Amount</th>
-										<th>Currency</th>
-										<th>Due Date</th>
-										<th>Position Type</th>
-										<th>Action due date</th>
-										<th>Notes</th>
-
-									</tr>
-									<tr>
-										<td>AAAAAA</td>
-										<td>GBRCN</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>10000.25</td>
-										<td>16,263.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td>10/10/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>BBBBBBBB</td>
-										<td>DEUE2</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td>10/10/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>CCCCCCC</td>
-										<td>AIACW</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>9000.25</td>
-										<td>8526.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td>10/10/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>DDDDDD</td>
-										<td>AUTMM</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td>10/10/2015</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div class="row topPaddingLarge hiddenDiv" id="120ActionsDiv">
-							<div class='col-md-12'>
-								<div class="form-group">
-									<label for="action">Current Action</label> <select id="action"
-										class="form-control">
-										<option>Email to the RP and waiting for response</option>
-										<option>Telephone no action - Next Action date</option>
-										<option>Telephon and payment promised to happen on
-											19/May/2015 and - next action date</option>
-									</select>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="action">Comments</label>
-									<textarea class="form-control" rows="3"></textarea>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="nextActionDate">Next Action Date</label> <input
-										type='text' id="datepicker120" placeholder='13/01/2015'
-										class="form-control" />
-								</div>
-							</div>
-							<div class='col-md-12'></div>
-						</div>
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"
-							id="120ActionSave">Save</button>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-
-		<div id="modalOutstandingRx" class="modal fade">
-			<div class="modal-dialog">
-				<div class="modal-content modal-lg">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal"
-							aria-hidden="true">&times;</button>
-						<h4 class="modal-title">
-							<i class="fa fa-money fa-2x"></i>&nbsp; Require first level
-							action
-						</h4>
-					</div>
-					<div class="modal-body">
-						<div class="table-responsive">
-							<table
-								class="table table-bordered table-striped  table-curved hoveringTable"
-								id="outstandingRxTab">
-								<tbody>
-									<tr>
-										<th>Partner</th>
-										<th>Tadig Code</th>
-										<th>Service Type</th>
-										<th>Traffic Period</th>
-										<th>Settlement Type</th>
-										<th>Net SDR</th>
-										<th>Net Amount</th>
-										<th>Currency</th>
-										<th>Due Date</th>
-										<th>Position Type</th>
-										<th>Notes</th>
-
-									</tr>
-									<tr>
-										<td>AAAAAA</td>
-										<td>GBRCN</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>10000.25</td>
-										<td>16,263.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>BBBBBBBB</td>
-										<td>DEUE2</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>CCCCCCC</td>
-										<td>AIACW</td>
-										<td>GSM</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>9000.25</td>
-										<td>8526.23</td>
-										<td>EUR</td>
-										<td>28/11/2013</td>
-										<td>Payable</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-									<tr>
-										<td>DDDDDD</td>
-										<td>AUTMM</td>
-										<td>SMS</td>
-										<td>Sep/2013</td>
-										<td>Gross</td>
-										<td>600.00</td>
-										<td>800.00</td>
-										<td>USD</td>
-										<td>28/11/2013</td>
-										<td>Receivable</td>
-										<td><img src="../images/note.jpg"></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-
-						<div class="row topPaddingLarge hiddenDiv" id="outstandingRxDiv">
-							<div class='col-md-12'>
-								<div class="form-group">
-									<label for="action">Current Action</label> <select id="action"
-										class="form-control">
-										<option>Email to the RP and waiting for response</option>
-										<option>Telephone no action - Next Action date</option>
-										<option>Telephon and payment promised to happen on
-											19/May/2015 and - next action date</option>
-									</select>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="action">Comments</label>
-									<textarea class="form-control" rows="3"></textarea>
-								</div>
-							</div>
-							<div class='col-md-6'>
-								<div class="form-group">
-									<label for="nextActionDate">Next Action Date</label> <input
-										type='text' id="datepickerOutstandingRx"
-										placeholder='13/01/2015' class="form-control" />
-								</div>
-							</div>
-							<div class='col-md-12'></div>
-						</div>
-
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary" data-dismiss="modal"
-							id="outstandingRxSave">Save</button>
-					</div>
-
-				</div>
 			</div>
 		</div>
 
@@ -1474,7 +954,76 @@ input[type="checkbox"]:checked ~ label:hover {
 			</div>
 		</div>
 
-		<div id="modalRoamingPatnersLists" class="modal fade">
+		<div id="modalTrafficLists" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content modal-lg">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+							aria-hidden="true">&times;</button>
+						<h4 class="modal-title">
+							<i class="fa fa-users fa-2x"></i>&nbsp; Select Traffic Periods								
+						</h4>
+					</div>
+					<!--  Modal header -->
+					<div class="modal-body">
+						<div class="FixedHeightContainer topPaddingLarge">
+							<div class="Content">
+								<div class="row">
+									<div class="col-md-2">
+										<div>
+											<span><input type="checkbox" id="tp1" class="chkhide"><label for="tp1">01/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp2" class="chkhide"><label for="tp2">02/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp3" class="chkhide"><label for="tp3">03/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp4" class="chkhide"><label for="tp4">04/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp5" class="chkhide"><label for="tp5">05/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp6" class="chkhide"><label for="tp6">06/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp7" class="chkhide"><label for="tp7">07/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp8" class="chkhide"><label for="tp8">08/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp9" class="chkhide"><label for="tp9">09/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp10" class="chkhide"><label for="tp10">10/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp11" class="chkhide"><label for="tp11">11/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp12" class="chkhide"><label for="tp12">12/2014</label></span>
+										</div>
+										<div>
+											<span><input type="checkbox" id="tp13" class="chkhide"><label for="tp13">01/2015</label></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" id="trafficBack">Back</button>
+						<button type="button" class="btn btn-primary" id="trafficNext">Next</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modalRoamingPartnersLists" class="modal fade">
 			<div class="modal-dialog">
 				<div class="modal-content modal-lg">
 					<div class="modal-header">
@@ -1492,1112 +1041,1112 @@ input[type="checkbox"]:checked ~ label:hover {
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm1" class="chkhide"><label
-												for="rm1">Patner 1</label></span>
+												for="rm1">Partner 1</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm2" class="chkhide"><label
-												for="rm2">Patner 2</label></span>
+												for="rm2">Partner 2</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm3" class="chkhide"><label
-												for="rm3">Patner 3</label></span>
+												for="rm3">Partner 3</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm4" class="chkhide"><label
-												for="rm4">Patner 4</label></span>
+												for="rm4">Partner 4</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm5" class="chkhide"><label
-												for="rm5">Patner 5</label></span>
+												for="rm5">Partner 5</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm6" class="chkhide"><label
-												for="rm6">Patner 6</label></span>
+												for="rm6">Partner 6</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm7" class="chkhide"><label
-												for="rm7">Patner 7</label></span>
+												for="rm7">Partner 7</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm8" class="chkhide"><label
-												for="rm8">Patner 8</label></span>
+												for="rm8">Partner 8</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm9" class="chkhide"><label
-												for="rm9">Patner 9</label></span>
+												for="rm9">Partner 9</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm10" class="chkhide"><label
-												for="rm10">Patner 10</label></span>
+												for="rm10">Partner 10</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm11" class="chkhide"><label
-												for="rm11">Patner 11</label></span>
+												for="rm11">Partner 11</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm12" class="chkhide"><label
-												for="rm12">Patner 12</label></span>
+												for="rm12">Partner 12</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm13" class="chkhide"><label
-												for="rm13">Patner 13</label></span>
+												for="rm13">Partner 13</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm14" class="chkhide"><label
-												for="rm14">Patner 14</label></span>
+												for="rm14">Partner 14</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm15" class="chkhide"><label
-												for="rm15">Patner 15</label></span>
+												for="rm15">Partner 15</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm16" class="chkhide"><label
-												for="rm16">Patner 16</label></span>
+												for="rm16">Partner 16</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm17" class="chkhide"><label
-												for="rm17">Patner 17</label></span>
+												for="rm17">Partner 17</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm18" class="chkhide"><label
-												for="rm18">Patner 18</label></span>
+												for="rm18">Partner 18</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm19" class="chkhide"><label
-												for="rm19">Patner 19</label></span>
+												for="rm19">Partner 19</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm20" class="chkhide"><label
-												for="rm20">Patner 20</label></span>
+												for="rm20">Partner 20</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm21" class="chkhide"><label
-												for="rm21">Patner 21</label></span>
+												for="rm21">Partner 21</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm22" class="chkhide"><label
-												for="rm22">Patner 22</label></span>
+												for="rm22">Partner 22</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm23" class="chkhide"><label
-												for="rm23">Patner 23</label></span>
+												for="rm23">Partner 23</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm24" class="chkhide"><label
-												for="rm24">Patner 24</label></span>
+												for="rm24">Partner 24</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm25" class="chkhide"><label
-												for="rm25">Patner 25</label></span>
+												for="rm25">Partner 25</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm26" class="chkhide"><label
-												for="rm26">Patner 26</label></span>
+												for="rm26">Partner 26</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm27" class="chkhide"><label
-												for="rm27">Patner 27</label></span>
+												for="rm27">Partner 27</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm28" class="chkhide"><label
-												for="rm28">Patner 28</label></span>
+												for="rm28">Partner 28</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm29" class="chkhide"><label
-												for="rm29">Patner 29</label></span>
+												for="rm29">Partner 29</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm30" class="chkhide"><label
-												for="rm30">Patner 30</label></span>
+												for="rm30">Partner 30</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm31" class="chkhide"><label
-												for="rm31">Patner 31</label></span>
+												for="rm31">Partner 31</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm32" class="chkhide"><label
-												for="rm32">Patner 32</label></span>
+												for="rm32">Partner 32</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm33" class="chkhide"><label
-												for="rm33">Patner 33</label></span>
+												for="rm33">Partner 33</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm34" class="chkhide"><label
-												for="rm34">Patner 34</label></span>
+												for="rm34">Partner 34</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm35" class="chkhide"><label
-												for="rm35">Patner 35</label></span>
+												for="rm35">Partner 35</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm36" class="chkhide"><label
-												for="rm36">Patner 36</label></span>
+												for="rm36">Partner 36</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm37" class="chkhide"><label
-												for="rm37">Patner 37</label></span>
+												for="rm37">Partner 37</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm38" class="chkhide"><label
-												for="rm38">Patner 38</label></span>
+												for="rm38">Partner 38</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm39" class="chkhide"><label
-												for="rm39">Patner 39</label></span>
+												for="rm39">Partner 39</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm40" class="chkhide"><label
-												for="rm40">Patner 40</label></span>
+												for="rm40">Partner 40</label></span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm41" class="chkhide"><label
-												for="rm41">Patner 41</label></span>
+												for="rm41">Partner 41</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm42" class="chkhide"><label
-												for="rm42">Patner 42</label></span>
+												for="rm42">Partner 42</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm43" class="chkhide"><label
-												for="rm43">Patner 43</label></span>
+												for="rm43">Partner 43</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm44" class="chkhide"><label
-												for="rm44">Patner 44</label></span>
+												for="rm44">Partner 44</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm45" class="chkhide"><label
-												for="rm45">Patner 45</label></span>
+												for="rm45">Partner 45</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm46" class="chkhide"><label
-												for="rm46">Patner 46</label></span>
+												for="rm46">Partner 46</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm47" class="chkhide"><label
-												for="rm47">Patner 47</label></span>
+												for="rm47">Partner 47</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm48" class="chkhide"><label
-												for="rm48">Patner 48</label></span>
+												for="rm48">Partner 48</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm49" class="chkhide"><label
-												for="rm49">Patner 49</label></span>
+												for="rm49">Partner 49</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm50" class="chkhide"><label
-												for="rm50">Patner 50</label></span>
+												for="rm50">Partner 50</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm51" class="chkhide"><label
-												for="rm51">Patner 51</label></span>
+												for="rm51">Partner 51</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm52" class="chkhide"><label
-												for="rm52">Patner 52</label></span>
+												for="rm52">Partner 52</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm53" class="chkhide"><label
-												for="rm53">Patner 53</label></span>
+												for="rm53">Partner 53</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm54" class="chkhide"><label
-												for="rm54">Patner 54</label></span>
+												for="rm54">Partner 54</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm55" class="chkhide"><label
-												for="rm55">Patner 55</label></span>
+												for="rm55">Partner 55</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm56" class="chkhide"><label
-												for="rm56">Patner 56</label></span>
+												for="rm56">Partner 56</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm57" class="chkhide"><label
-												for="rm57">Patner 57</label></span>
+												for="rm57">Partner 57</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm58" class="chkhide"><label
-												for="rm58">Patner 58</label></span>
+												for="rm58">Partner 58</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm59" class="chkhide"><label
-												for="rm59">Patner 59</label></span>
+												for="rm59">Partner 59</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm60" class="chkhide"><label
-												for="rm60">Patner 60</label></span>
+												for="rm60">Partner 60</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm61" class="chkhide"><label
-												for="rm61">Patner 61</label></span>
+												for="rm61">Partner 61</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm62" class="chkhide"><label
-												for="rm62">Patner 62</label></span>
+												for="rm62">Partner 62</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm63" class="chkhide"><label
-												for="rm63">Patner 63</label></span>
+												for="rm63">Partner 63</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm64" class="chkhide"><label
-												for="rm64">Patner 64</label></span>
+												for="rm64">Partner 64</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm65" class="chkhide"><label
-												for="rm65">Patner 65</label></span>
+												for="rm65">Partner 65</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm66" class="chkhide"><label
-												for="rm66">Patner 66</label></span>
+												for="rm66">Partner 66</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm67" class="chkhide"><label
-												for="rm67">Patner 67</label></span>
+												for="rm67">Partner 67</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm68" class="chkhide"><label
-												for="rm68">Patner 68</label></span>
+												for="rm68">Partner 68</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm69" class="chkhide"><label
-												for="rm69">Patner 69</label></span>
+												for="rm69">Partner 69</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm70" class="chkhide"><label
-												for="rm70">Patner 70</label></span>
+												for="rm70">Partner 70</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm71" class="chkhide"><label
-												for="rm71">Patner 71</label></span>
+												for="rm71">Partner 71</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm72" class="chkhide"><label
-												for="rm72">Patner 72</label></span>
+												for="rm72">Partner 72</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm73" class="chkhide"><label
-												for="rm73">Patner 73</label></span>
+												for="rm73">Partner 73</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm74" class="chkhide"><label
-												for="rm74">Patner 74</label></span>
+												for="rm74">Partner 74</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm75" class="chkhide"><label
-												for="rm75">Patner 75</label></span>
+												for="rm75">Partner 75</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm76" class="chkhide"><label
-												for="rm76">Patner 76</label></span>
+												for="rm76">Partner 76</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm77" class="chkhide"><label
-												for="rm77">Patner 77</label></span>
+												for="rm77">Partner 77</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm78" class="chkhide"><label
-												for="rm78">Patner 78</label></span>
+												for="rm78">Partner 78</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm79" class="chkhide"><label
-												for="rm79">Patner 79</label></span>
+												for="rm79">Partner 79</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm80" class="chkhide"><label
-												for="rm80">Patner 80</label></span>
+												for="rm80">Partner 80</label></span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm81" class="chkhide"><label
-												for="rm81">Patner 81</label></span>
+												for="rm81">Partner 81</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm82" class="chkhide"><label
-												for="rm82">Patner 82</label></span>
+												for="rm82">Partner 82</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm83" class="chkhide"><label
-												for="rm83">Patner 83</label></span>
+												for="rm83">Partner 83</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm84" class="chkhide"><label
-												for="rm84">Patner 84</label></span>
+												for="rm84">Partner 84</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm85" class="chkhide"><label
-												for="rm85">Patner 85</label></span>
+												for="rm85">Partner 85</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm86" class="chkhide"><label
-												for="rm86">Patner 86</label></span>
+												for="rm86">Partner 86</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm87" class="chkhide"><label
-												for="rm87">Patner 87</label></span>
+												for="rm87">Partner 87</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm88" class="chkhide"><label
-												for="rm88">Patner 88</label></span>
+												for="rm88">Partner 88</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm89" class="chkhide"><label
-												for="rm89">Patner 89</label></span>
+												for="rm89">Partner 89</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm90" class="chkhide"><label
-												for="rm90">Patner 90</label></span>
+												for="rm90">Partner 90</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm91" class="chkhide"><label
-												for="rm91">Patner 91</label></span>
+												for="rm91">Partner 91</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm92" class="chkhide"><label
-												for="rm92">Patner 92</label></span>
+												for="rm92">Partner 92</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm93" class="chkhide"><label
-												for="rm93">Patner 93</label></span>
+												for="rm93">Partner 93</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm94" class="chkhide"><label
-												for="rm94">Patner 94</label></span>
+												for="rm94">Partner 94</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm95" class="chkhide"><label
-												for="rm95">Patner 95</label></span>
+												for="rm95">Partner 95</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm96" class="chkhide"><label
-												for="rm96">Patner 96</label></span>
+												for="rm96">Partner 96</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm97" class="chkhide"><label
-												for="rm97">Patner 97</label></span>
+												for="rm97">Partner 97</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm98" class="chkhide"><label
-												for="rm98">Patner 98</label></span>
+												for="rm98">Partner 98</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm99" class="chkhide"><label
-												for="rm99">Patner 99</label></span>
+												for="rm99">Partner 99</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm100"
-												class="chkhide"><label for="rm100">Patner
+												class="chkhide"><label for="rm100">Partner
 													100</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm101"
-												class="chkhide"><label for="rm101">Patner
+												class="chkhide"><label for="rm101">Partner
 													101</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm102"
-												class="chkhide"><label for="rm102">Patner
+												class="chkhide"><label for="rm102">Partner
 													102</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm103"
-												class="chkhide"><label for="rm103">Patner
+												class="chkhide"><label for="rm103">Partner
 													103</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm104"
-												class="chkhide"><label for="rm104">Patner
+												class="chkhide"><label for="rm104">Partner
 													104</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm105"
-												class="chkhide"><label for="rm105">Patner
+												class="chkhide"><label for="rm105">Partner
 													105</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm106"
-												class="chkhide"><label for="rm106">Patner
+												class="chkhide"><label for="rm106">Partner
 													106</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm107"
-												class="chkhide"><label for="rm107">Patner
+												class="chkhide"><label for="rm107">Partner
 													107</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm108"
-												class="chkhide"><label for="rm108">Patner
+												class="chkhide"><label for="rm108">Partner
 													108</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm109"
-												class="chkhide"><label for="rm109">Patner
+												class="chkhide"><label for="rm109">Partner
 													109</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm110"
-												class="chkhide"><label for="rm110">Patner
+												class="chkhide"><label for="rm110">Partner
 													110</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm111"
-												class="chkhide"><label for="rm111">Patner
+												class="chkhide"><label for="rm111">Partner
 													111</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm112"
-												class="chkhide"><label for="rm112">Patner
+												class="chkhide"><label for="rm112">Partner
 													112</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm113"
-												class="chkhide"><label for="rm113">Patner
+												class="chkhide"><label for="rm113">Partner
 													113</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm114"
-												class="chkhide"><label for="rm114">Patner
+												class="chkhide"><label for="rm114">Partner
 													114</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm115"
-												class="chkhide"><label for="rm115">Patner
+												class="chkhide"><label for="rm115">Partner
 													115</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm116"
-												class="chkhide"><label for="rm116">Patner
+												class="chkhide"><label for="rm116">Partner
 													116</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm117"
-												class="chkhide"><label for="rm117">Patner
+												class="chkhide"><label for="rm117">Partner
 													117</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm118"
-												class="chkhide"><label for="rm118">Patner
+												class="chkhide"><label for="rm118">Partner
 													118</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm119"
-												class="chkhide"><label for="rm119">Patner
+												class="chkhide"><label for="rm119">Partner
 													119</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm120"
-												class="chkhide"><label for="rm120">Patner
+												class="chkhide"><label for="rm120">Partner
 													120</label></span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm121"
-												class="chkhide"><label for="rm121">Patner
+												class="chkhide"><label for="rm121">Partner
 													121</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm122"
-												class="chkhide"><label for="rm122">Patner
+												class="chkhide"><label for="rm122">Partner
 													122</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm123"
-												class="chkhide"><label for="rm123">Patner
+												class="chkhide"><label for="rm123">Partner
 													123</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm124"
-												class="chkhide"><label for="rm124">Patner
+												class="chkhide"><label for="rm124">Partner
 													124</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm125"
-												class="chkhide"><label for="rm125">Patner
+												class="chkhide"><label for="rm125">Partner
 													125</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm126"
-												class="chkhide"><label for="rm126">Patner
+												class="chkhide"><label for="rm126">Partner
 													126</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm127"
-												class="chkhide"><label for="rm127">Patner
+												class="chkhide"><label for="rm127">Partner
 													127</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm128"
-												class="chkhide"><label for="rm128">Patner
+												class="chkhide"><label for="rm128">Partner
 													128</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm129"
-												class="chkhide"><label for="rm129">Patner
+												class="chkhide"><label for="rm129">Partner
 													129</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm30" class="chkhide"><label
-												for="rm130">Patner 130</label></span>
+												for="rm130">Partner 130</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm131"
-												class="chkhide"><label for="rm131">Patner
+												class="chkhide"><label for="rm131">Partner
 													131</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm132"
-												class="chkhide"><label for="rm132">Patner
+												class="chkhide"><label for="rm132">Partner
 													132</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm133"
-												class="chkhide"><label for="rm133">Patner
+												class="chkhide"><label for="rm133">Partner
 													133</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm134"
-												class="chkhide"><label for="rm134">Patner
+												class="chkhide"><label for="rm134">Partner
 													134</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm135"
-												class="chkhide"><label for="rm135">Patner
+												class="chkhide"><label for="rm135">Partner
 													135</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm136"
-												class="chkhide"><label for="rm136">Patner
+												class="chkhide"><label for="rm136">Partner
 													136</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm137"
-												class="chkhide"><label for="rm137">Patner
+												class="chkhide"><label for="rm137">Partner
 													137</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm138"
-												class="chkhide"><label for="rm138">Patner
+												class="chkhide"><label for="rm138">Partner
 													138</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm139"
-												class="chkhide"><label for="rm139">Patner
+												class="chkhide"><label for="rm139">Partner
 													139</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm140"
-												class="chkhide"><label for="rm140">Patner
+												class="chkhide"><label for="rm140">Partner
 													140</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm141"
-												class="chkhide"><label for="rm141">Patner
+												class="chkhide"><label for="rm141">Partner
 													141</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm142"
-												class="chkhide"><label for="rm142">Patner
+												class="chkhide"><label for="rm142">Partner
 													142</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm143"
-												class="chkhide"><label for="rm143">Patner
+												class="chkhide"><label for="rm143">Partner
 													143</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm144"
-												class="chkhide"><label for="rm144">Patner
+												class="chkhide"><label for="rm144">Partner
 													144</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm145"
-												class="chkhide"><label for="rm145">Patner
+												class="chkhide"><label for="rm145">Partner
 													145</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm146"
-												class="chkhide"><label for="rm146">Patner
+												class="chkhide"><label for="rm146">Partner
 													146</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm147"
-												class="chkhide"><label for="rm147">Patner
+												class="chkhide"><label for="rm147">Partner
 													147</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm148"
-												class="chkhide"><label for="rm148">Patner
+												class="chkhide"><label for="rm148">Partner
 													148</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm149"
-												class="chkhide"><label for="rm149">Patner
+												class="chkhide"><label for="rm149">Partner
 													149</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm150"
-												class="chkhide"><label for="rm150">Patner
+												class="chkhide"><label for="rm150">Partner
 													150</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm151"
-												class="chkhide"><label for="rm151">Patner
+												class="chkhide"><label for="rm151">Partner
 													151</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm152"
-												class="chkhide"><label for="rm152">Patner
+												class="chkhide"><label for="rm152">Partner
 													152</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm153"
-												class="chkhide"><label for="rm153">Patner
+												class="chkhide"><label for="rm153">Partner
 													153</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm154"
-												class="chkhide"><label for="rm154">Patner
+												class="chkhide"><label for="rm154">Partner
 													154</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm155"
-												class="chkhide"><label for="rm155">Patner
+												class="chkhide"><label for="rm155">Partner
 													155</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm156"
-												class="chkhide"><label for="rm156">Patner
+												class="chkhide"><label for="rm156">Partner
 													156</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm157"
-												class="chkhide"><label for="rm157">Patner
+												class="chkhide"><label for="rm157">Partner
 													157</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm158"
-												class="chkhide"><label for="rm158">Patner
+												class="chkhide"><label for="rm158">Partner
 													158</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm159"
-												class="chkhide"><label for="rm159">Patner
+												class="chkhide"><label for="rm159">Partner
 													159</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm160"
-												class="chkhide"><label for="rm160">Patner
+												class="chkhide"><label for="rm160">Partner
 													160</label></span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm161"
-												class="chkhide"><label for="rm161">Patner
+												class="chkhide"><label for="rm161">Partner
 													161</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm162"
-												class="chkhide"><label for="rm162">Patner
+												class="chkhide"><label for="rm162">Partner
 													162</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm163"
-												class="chkhide"><label for="rm163">Patner
+												class="chkhide"><label for="rm163">Partner
 													163</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm164"
-												class="chkhide"><label for="rm164">Patner
+												class="chkhide"><label for="rm164">Partner
 													164</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm165"
-												class="chkhide"><label for="rm165">Patner
+												class="chkhide"><label for="rm165">Partner
 													165</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm166"
-												class="chkhide"><label for="rm166">Patner
+												class="chkhide"><label for="rm166">Partner
 													166</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm167"
-												class="chkhide"><label for="rm167">Patner
+												class="chkhide"><label for="rm167">Partner
 													167</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm168"
-												class="chkhide"><label for="rm168">Patner
+												class="chkhide"><label for="rm168">Partner
 													168</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm169"
-												class="chkhide"><label for="rm169">Patner
+												class="chkhide"><label for="rm169">Partner
 													169</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm170"
-												class="chkhide"><label for="rm170">Patner
+												class="chkhide"><label for="rm170">Partner
 													170</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm171"
-												class="chkhide"><label for="rm171">Patner
+												class="chkhide"><label for="rm171">Partner
 													171</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm172"
-												class="chkhide"><label for="rm172">Patner
+												class="chkhide"><label for="rm172">Partner
 													172</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm173"
-												class="chkhide"><label for="rm173">Patner
+												class="chkhide"><label for="rm173">Partner
 													173</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm174"
-												class="chkhide"><label for="rm174">Patner
+												class="chkhide"><label for="rm174">Partner
 													174</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm175"
-												class="chkhide"><label for="rm175">Patner
+												class="chkhide"><label for="rm175">Partner
 													175</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm176"
-												class="chkhide"><label for="rm176">Patner
+												class="chkhide"><label for="rm176">Partner
 													176</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm177"
-												class="chkhide"><label for="rm177">Patner
+												class="chkhide"><label for="rm177">Partner
 													177</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm178"
-												class="chkhide"><label for="rm178">Patner
+												class="chkhide"><label for="rm178">Partner
 													178</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm179"
-												class="chkhide"><label for="rm179">Patner
+												class="chkhide"><label for="rm179">Partner
 													179</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm180"
-												class="chkhide"><label for="rm180">Patner
+												class="chkhide"><label for="rm180">Partner
 													180</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm181"
-												class="chkhide"><label for="rm181">Patner
+												class="chkhide"><label for="rm181">Partner
 													181</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm182"
-												class="chkhide"><label for="rm182">Patner
+												class="chkhide"><label for="rm182">Partner
 													182</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm183"
-												class="chkhide"><label for="rm183">Patner
+												class="chkhide"><label for="rm183">Partner
 													183</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm184"
-												class="chkhide"><label for="rm184">Patner
+												class="chkhide"><label for="rm184">Partner
 													184</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm185"
-												class="chkhide"><label for="rm185">Patner
+												class="chkhide"><label for="rm185">Partner
 													185</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm186"
-												class="chkhide"><label for="rm186">Patner
+												class="chkhide"><label for="rm186">Partner
 													186</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm187"
-												class="chkhide"><label for="rm187">Patner
+												class="chkhide"><label for="rm187">Partner
 													187</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm188"
-												class="chkhide"><label for="rm188">Patner
+												class="chkhide"><label for="rm188">Partner
 													188</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm189"
-												class="chkhide"><label for="rm189">Patner
+												class="chkhide"><label for="rm189">Partner
 													189</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm180"
-												class="chkhide"><label for="rm190">Patner
+												class="chkhide"><label for="rm190">Partner
 													190</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm181"
-												class="chkhide"><label for="rm191">Patner
+												class="chkhide"><label for="rm191">Partner
 													191</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm182"
-												class="chkhide"><label for="rm192">Patner
+												class="chkhide"><label for="rm192">Partner
 													192</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm183"
-												class="chkhide"><label for="rm193">Patner
+												class="chkhide"><label for="rm193">Partner
 													193</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm184"
-												class="chkhide"><label for="rm194">Patner
+												class="chkhide"><label for="rm194">Partner
 													194</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm185"
-												class="chkhide"><label for="rm195">Patner
+												class="chkhide"><label for="rm195">Partner
 													195</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm186"
-												class="chkhide"><label for="rm196">Patner
+												class="chkhide"><label for="rm196">Partner
 													196</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm187"
-												class="chkhide"><label for="rm197">Patner
+												class="chkhide"><label for="rm197">Partner
 													197</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm188"
-												class="chkhide"><label for="rm198">Patner
+												class="chkhide"><label for="rm198">Partner
 													198</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm189"
-												class="chkhide"><label for="rm199">Patner
+												class="chkhide"><label for="rm199">Partner
 													199</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm200"
-												class="chkhide"><label for="rm200">Patner
+												class="chkhide"><label for="rm200">Partner
 													200</label></span>
 										</div>
 									</div>
 									<div class="col-md-2">
 										<div>
 											<span><input type="checkbox" id="rm201"
-												class="chkhide"><label for="rm201">Patner
+												class="chkhide"><label for="rm201">Partner
 													201</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm202"
-												class="chkhide"><label for="rm202">Patner
+												class="chkhide"><label for="rm202">Partner
 													202</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm203"
-												class="chkhide"><label for="rm203">Patner
+												class="chkhide"><label for="rm203">Partner
 													203</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm204"
-												class="chkhide"><label for="rm204">Patner
+												class="chkhide"><label for="rm204">Partner
 													204</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm205"
-												class="chkhide"><label for="rm205">Patner
+												class="chkhide"><label for="rm205">Partner
 													205</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm206"
-												class="chkhide"><label for="rm206">Patner
+												class="chkhide"><label for="rm206">Partner
 													206</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm207"
-												class="chkhide"><label for="rm207">Patner
+												class="chkhide"><label for="rm207">Partner
 													207</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm208"
-												class="chkhide"><label for="rm208">Patner
+												class="chkhide"><label for="rm208">Partner
 													208</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm209"
-												class="chkhide"><label for="rm209">Patner
+												class="chkhide"><label for="rm209">Partner
 													209</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm210"
-												class="chkhide"><label for="rm210">Patner
+												class="chkhide"><label for="rm210">Partner
 													210</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm211"
-												class="chkhide"><label for="rm211">Patner
+												class="chkhide"><label for="rm211">Partner
 													211</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm212"
-												class="chkhide"><label for="rm212">Patner
+												class="chkhide"><label for="rm212">Partner
 													212</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm213"
-												class="chkhide"><label for="rm213">Patner
+												class="chkhide"><label for="rm213">Partner
 													213</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm214"
-												class="chkhide"><label for="rm214">Patner
+												class="chkhide"><label for="rm214">Partner
 													214</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm215"
-												class="chkhide"><label for="rm215">Patner
+												class="chkhide"><label for="rm215">Partner
 													215</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm216"
-												class="chkhide"><label for="rm216">Patner
+												class="chkhide"><label for="rm216">Partner
 													216</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm217"
-												class="chkhide"><label for="rm217">Patner
+												class="chkhide"><label for="rm217">Partner
 													217</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm218"
-												class="chkhide"><label for="rm218">Patner
+												class="chkhide"><label for="rm218">Partner
 													218</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm219"
-												class="chkhide"><label for="rm219">Patner
+												class="chkhide"><label for="rm219">Partner
 													219</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm220"
-												class="chkhide"><label for="rm220">Patner
+												class="chkhide"><label for="rm220">Partner
 													220</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm221"
-												class="chkhide"><label for="rm221">Patner
+												class="chkhide"><label for="rm221">Partner
 													221</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm222"
-												class="chkhide"><label for="rm222">Patner
+												class="chkhide"><label for="rm222">Partner
 													222</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm223"
-												class="chkhide"><label for="rm223">Patner
+												class="chkhide"><label for="rm223">Partner
 													223</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm224"
-												class="chkhide"><label for="rm224">Patner
+												class="chkhide"><label for="rm224">Partner
 													224</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm225"
-												class="chkhide"><label for="rm225">Patner
+												class="chkhide"><label for="rm225">Partner
 													225</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm226"
-												class="chkhide"><label for="rm226">Patner
+												class="chkhide"><label for="rm226">Partner
 													226</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm227"
-												class="chkhide"><label for="rm227">Patner
+												class="chkhide"><label for="rm227">Partner
 													227</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm228"
-												class="chkhide"><label for="rm228">Patner
+												class="chkhide"><label for="rm228">Partner
 													228</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm229"
-												class="chkhide"><label for="rm229">Patner
+												class="chkhide"><label for="rm229">Partner
 													229</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm230"
-												class="chkhide"><label for="rm230">Patner
+												class="chkhide"><label for="rm230">Partner
 													230</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm231"
-												class="chkhide"><label for="rm231">Patner
+												class="chkhide"><label for="rm231">Partner
 													231</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm232"
-												class="chkhide"><label for="rm232">Patner
+												class="chkhide"><label for="rm232">Partner
 													232</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm233"
-												class="chkhide"><label for="rm233">Patner
+												class="chkhide"><label for="rm233">Partner
 													233</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm234"
-												class="chkhide"><label for="rm234">Patner
+												class="chkhide"><label for="rm234">Partner
 													234</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm235"
-												class="chkhide"><label for="rm235">Patner
+												class="chkhide"><label for="rm235">Partner
 													235</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm236"
-												class="chkhide"><label for="rm236">Patner
+												class="chkhide"><label for="rm236">Partner
 													236</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm237"
-												class="chkhide"><label for="rm237">Patner
+												class="chkhide"><label for="rm237">Partner
 													237</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm238"
-												class="chkhide"><label for="rm238">Patner
+												class="chkhide"><label for="rm238">Partner
 													238</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm239"
-												class="chkhide"><label for="rm239">Patner
+												class="chkhide"><label for="rm239">Partner
 													239</label></span>
 										</div>
 										<div>
 											<span><input type="checkbox" id="rm240"
-												class="chkhide"><label for="rm240">Patner
+												class="chkhide"><label for="rm240">Partner
 													240</label></span>
 										</div>
 									</div>
@@ -2614,8 +2163,8 @@ input[type="checkbox"]:checked ~ label:hover {
 				</div>
 			</div>
 		</div>
-
 	</div>
+
 	<%@include file="../footer.jsp"%>
 </body>
 </html>

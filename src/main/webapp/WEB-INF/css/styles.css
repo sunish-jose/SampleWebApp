@@ -446,16 +446,16 @@ hr {
 	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
 		'Lucida Sans', Tahoma, sans-serif;
 	border: 1px solid #fff;
-	height: 240px;
-	width: 200px;
+	height: 300px;
+	width: 210px;
 	border-color: #fff !important;
 	padding: 6px 6px;
 }
 
 .clientTile:hover {
 	border: 1px solid #CCCC00;
-	height: 240px;
-	width: 200px;
+	height: 300px;
+	width: 210px;
 	cursor: pointer;
 	border-color: #CCCC00 !important;
 }
@@ -484,6 +484,13 @@ hr {
 	size: 4;
 }
 
+.fontMediumBold {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+	font-weight: bold;
+	color: #3366CC;
+}
+
 .customTable tbody th {
 	color: #FFF;
 	background-color: #305983 !important;
@@ -491,9 +498,7 @@ hr {
 }
 
 .customTable tbody td {
-	border-color: #99CCF0;
-	!
-	important;
+	border-color: #99CCF0 !	important;
 }
 
 .plainTable {
@@ -582,6 +587,7 @@ hr {
 	text-align: center;
 	background: #33CC33;
 }
+
 .circleYello {
 	width: 150px;
 	height: 150px;
@@ -592,6 +598,7 @@ hr {
 	text-align: center;
 	background: #FFCC00;
 }
+
 .circleAsh {
 	width: 150px;
 	height: 150px;
@@ -602,6 +609,7 @@ hr {
 	text-align: center;
 	background: #C8C8DA;
 }
+
 .circleMagent {
 	width: 150px;
 	height: 150px;
@@ -612,6 +620,7 @@ hr {
 	text-align: center;
 	background: #33CCCC;
 }
+
 .circlePink {
 	width: 150px;
 	height: 150px;
@@ -621,4 +630,87 @@ hr {
 	line-height: 150px;
 	text-align: center;
 	background: #CC00FF;
+}
+
+.debtorSumGraphDiv {
+	height: 600px;
+}
+
+.divBatch1 {
+	width: 150px;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #005CE6;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+}
+
+.divBatch2 {
+	width: 150px;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #33CC33;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+}
+
+.divBatch3 {
+	width: 150px;
+	height: 200px;
+	border-radius: 5px;
+	background-color: #801F1F;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+}
+
+.divBase1 {
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #005CE6;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+}
+
+.divBase2 {
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #33CC33;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+	text-align: center;
+}
+
+.divBase3 {
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #801F1F;
+	box-shadow: 5px 5px 5px #888888;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #fff;
+}
+
+.blockSpan {
+	display: block;
+	padding: 5px;
 }

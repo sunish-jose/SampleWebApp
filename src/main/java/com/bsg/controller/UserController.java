@@ -129,7 +129,36 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/paymentApproval", method = RequestMethod.GET)
 	public String paymentApproval() {
 		return "user/paymentApproval";
+	}
+	
+	@RequestMapping(value = "/prepaymentCalculation", method = RequestMethod.GET)
+	public String prepaymentCalculation() {
+		return "user/prepaymentCalculation";
 	}	
+	
+	@RequestMapping(value = "/actualPaymentCalculation", method = RequestMethod.GET)
+	public String actualPaymentCalculation() {
+		return "user/actualPaymentCalculation";
+	}
+	
+	
+	@RequestMapping(value = "/transactionDetails", method = RequestMethod.GET)
+	public String transactionDetails() {
+		return "user/transactionDetails";
+	}
+	
+	@RequestMapping(value = "/positionAdmin", method = RequestMethod.GET)
+	public String showPositionAdmin(Model model){
+		model.addAttribute(new User());
+		return "user/positionAdmin";
+	}
+	
+	@RequestMapping(value = "/positionAdminDetails", method = RequestMethod.GET)
+	public String showPositionAdminDetails(Model model){
+		model.addAttribute(new User());
+		return "user/positionAdminDetails";
+	}
+	
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String addNewUser(@Valid User user, BindingResult bindingResult) {

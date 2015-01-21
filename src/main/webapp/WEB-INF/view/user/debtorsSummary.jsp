@@ -2,10 +2,197 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link href="favicon.ico" rel="shortcut icon" >
+<link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
 
 <%@include file="../headerResource.jsp"%>
+
+<script>
+	$(document).ready(function() {
+		$("#top10RxPositionsDiv").hide();
+	});
+</script>
+
+<script type="text/javascript"
+	src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+
+<script>
+	google.load("visualization", "1", {
+		packages : [ "corechart" ]
+	});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+				[ '', 'USD', 'EUR' ],
+				[ '< 30 Days',  125253.23,      156877.22],
+    ['> 30 Days',
+						121325.23, 136666.22 ],
+				[ '> 60 Days', 2222.25, 15000.25 ],
+				[ '> 90 Days', 15000.25, 7500.26 ],
+				[ '> 120 Days', 6000, 3569.25 ] ]);
+
+		var options = {
+			height : '400',
+			title : 'Outstanding Receivables (Net Receiver)',
+			vAxis : {
+				title : 'Time in Days',
+				titleTextStyle : {
+					color : 'red'
+				}
+			}
+		};
+
+		var chart = new google.visualization.BarChart(document
+				.getElementById('outstandingRx'));
+
+		chart.draw(data, options);
+	}
+
+	/* 	google.setOnLoadCallback(drawChart); */
+
+	/* 	function drawChart() {
+	 var data = google.visualization.arrayToDataTable([
+	 [ 'Days', 'USD', 'EUR' ],
+	 ['< 30 Days',  125253.23,      256877.22],
+          				['> 30 Days', 521325.23, 136666.22 ],
+	 [ '> 60 Days', 2222.25, 15000.25 ],
+	 [ '> 90 Days', 15000.25, 7500.26 ],
+	 [ '> 120 Days', 600, 3569.25 ], ]);
+
+	 var options = {
+	 title : 'Outstanding Receivables (Net Receiver)',
+	 curveType : 'function',
+	 legend : {
+	 position : 'bottom'
+	 }
+	 };
+	
+	 var chart = new google.visualization.LineChart(document
+	 .getElementById('outstandingRx'));
+
+	 chart.draw(data, options); 
+	 }*/
+</script>
+<script>
+	/* function drawVisualization() {
+	 // Some raw data (not necessarily accurate)
+	 var data = google.visualization.arrayToDataTable([
+	 ['Month', 'USD', { role: 'style' }, 'EUR', { role: 'style' }],
+	 ['November',  125253.23, '#b87333',      256877.22, '#b87333'],
+	 ['November',  125253.23, '',      256877.22, ''],
+	 ['December',  136676.22,  '',    236666.22, ''],
+	 ['December',  136676.22,  '',    236666.22, ''],
+	 ['January',  52222.25, '',     150000.25, ''],
+	 ['January',  52222.25, '',     150000.25, ''],
+	 ]);
+
+	 var options = {
+	 title : 'Last 3 Months Collection',
+	 height: 400,
+	 vAxis: {title: ""},
+	 hAxis: {title: ""},
+	 seriesType: "bars",
+	 legend: { position: 'top', maxLines: 3 },
+	 bar: { groupWidth: '75%' },
+	 isStacked: true
+	
+	 };
+
+	 var chart = new google.visualization.ComboChart(document.getElementById('last3MonthsCollection'));
+	 chart.draw(data, options);
+	 } */
+	google.setOnLoadCallback(drawVisualization);
+	function drawVisualization() {
+		// Some raw data (not necessarily accurate)
+		var data = google.visualization.arrayToDataTable([
+				[ 'Month', 'USD', 'EUR', ],
+				[ 'November', 125253.23, 256877.22 ],
+				[ 'December', 136676.22, 236666.22 ],
+				[ 'January', 52222.25, 150000.25 ], ]);
+
+		var options = {
+			title : 'Last 3 Months Collection',
+			vAxis : {
+				title : ""
+			},
+			hAxis : {
+				title : ""
+			},
+			seriesType : "bars",
+		};
+
+		var chart = new google.visualization.ComboChart(document
+				.getElementById('last3MonthsCollection'));
+		chart.draw(data, options);
+	}
+</script>
+
+<script>
+	google.load("visualization", "1", {
+		packages : [ "corechart" ]
+	});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+				[ 'Tadig Code', 'Amount' ], [ 'AIACW', 16573.25 ],
+				[ 'GBRCN', 15473.25 ], [ 'GBRCN', 13583.25 ],
+				[ 'ESPRT', 13370.36 ], [ 'DEUO2', 12673.88 ],
+				[ 'DEUE2', 11567.56 ], [ 'AUSTA', 10973.25 ],
+				[ 'AUTMM', 10876.44 ], [ 'AIACW', 6569.26 ],
+				[ 'GBRMT', 5488.39 ] ]);
+
+		var options = {
+			height : '600',
+			title : 'Top 10 Receivable Positions',
+			is3D : true,
+		};
+
+		var chart = new google.visualization.PieChart(document
+				.getElementById('top10RxPositionsPieChart'));
+		chart.draw(data, options);
+		
+		google.visualization.events.addListener(chart, 'select', function() {
+			$('#top10RxPositionsDiv').show();
+		});
+	}
+</script>
+
+<script>
+	google.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+		var data = google.visualization
+				.arrayToDataTable([
+						[ 'Year', 'USD Received', 'USD all', 'EUR Received', 'EUR All' ], 
+						[ '', 0, 0, 0, 0 ],
+						[ 'November', 2000, 2000, 200, 200 ],
+						[ 'December', 1000, 3000, 3000, 3200 ],
+						[ 'January', 1500, 4500, 600, 3800 ]
+
+				]);
+
+		var options = {
+			height : '600',
+			width : '700',
+			title : 'Top 10 Receivable positions',
+			curveType : 'function',
+			legend : {
+				position : 'bottom'
+			}
+		};
+
+		var chart = new google.visualization.LineChart(document
+				.getElementById('top10RxPositionsLineGraph'));
+
+		chart.draw(data, options);
+	}
+</script>
 
 </head>
 <body>
@@ -18,39 +205,12 @@
 		</ol>
 		<!-- row starting -->
 		<div class="row topPadding10px">
-			<div class="col-md-6">
-				<h3>Receipt</h3>
-				<table
-					class="table table-bordered table-striped table-hover table-curved">
-					<tbody>
-						<tr>
-							<th>Account No</th>
-							<th>Currency</th>
-							<th>This Month Collection</th>
-							<th>Bank Balance</th>
-							<th>Unallocated Cash</th>
-						</tr>
-						<tr>
-							<td>54344367876</td>
-							<td>USD</td>
-							<td>125253.23</td>
-							<td>521325.23</td>
-							<td>2222.25</td>
-						</tr>
-						<tr>
-							<td>54344367899</td>
-							<td>EUR</td>
-							<td>256877.22</td>
-							<td>136666.22</td>
-							<td>15000.25</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
 
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<h3>Last 3 Months Collection</h3>
-				<table
+				<div id="last3MonthsCollection"></div>
+
+				<!-- 				<table
 					class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
 						<tr>
@@ -75,13 +235,65 @@
 							<td>15000.25</td>
 						</tr>
 					</tbody>
-				</table>
+				</table> -->
 			</div>
 
-			<div class="col-md-10">
+			<div class="col-md-12">
 				<h3>Outstanding Receivables (Net Receiver)</h3>
-				<table
-					class="table table-bordered table-striped table-hover table-curved"
+
+				<div id="outstandingRx"></div>
+
+
+				<div class="col-md-7">
+					<h3>Receipt</h3>
+					<table
+						class="table table-bordered table-striped table-hover table-curved">
+						<tbody>
+							<tr>
+								<th>Account No</th>
+								<th>Currency</th>
+								<th>This Month Collection</th>
+								<th>Bank Balance</th>
+							</tr>
+							<tr>
+								<td>54344367876</td>
+								<td>USD</td>
+								<td>125253.23</td>
+								<td>521325.23</td>
+							</tr>
+							<tr>
+								<td>54344367899</td>
+								<td>EUR</td>
+								<td>256877.22</td>
+								<td>136666.22</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="col-md-5">
+					<h3>&nbsp;</h3>
+					<table
+						class="table table-bordered table-striped table-hover table-curved">
+						<tbody>
+							<tr>
+								<th>Unallocated Receipts</th>
+								<th>Unallocated Cash</th>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>500.00</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>50000.78</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<!-- 
+				<table class="table table-bordered table-striped table-hover table-curved"
 					id="outstandingRx">
 					<tbody>
 						<tr>
@@ -113,27 +325,19 @@
 						</tr>
 					</tbody>
 				</table>
+				 -->
 			</div>
 
-			<div class="col-md-2">
-				<h3>&nbsp;</h3>
-				<table
-					class="table table-bordered table-striped table-hover table-curved">
-					<tbody>
-						<tr>
-							<th>Unallocated Cash</th>
-						</tr>
-						<tr>
-							<td>0</td>
-						</tr>
-						<tr>
-							<td>10000.25</td>
-						</tr>
-					</tbody>
-				</table>
+
+			<div class="col-md-5">
+				<div id="top10RxPositionsPieChart"></div>
 			</div>
 
-			<div class="col-md-12">
+			<div class="col-md-7">
+				<div id="top10RxPositionsLineGraph"></div>
+			</div>
+
+			<div class="col-md-12" id="top10RxPositionsDiv">
 				<h3>Top 10 Receivable Positions</h3>
 				<table
 					class="table table-bordered table-striped table-hover table-curved">
@@ -208,7 +412,6 @@
 				</table>
 			</div>
 
-			<!-- row starting -->
 		</div>
 	</div>
 	<script type="text/javascript">

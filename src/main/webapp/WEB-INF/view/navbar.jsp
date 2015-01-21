@@ -56,11 +56,11 @@
 						<!-- Start of submenu -->
 						<li class="dropdown-submenu"><a href="#">Payment/Settlement</a>
 							<ul class="dropdown-menu" role="menu">
+								<li><a href="../user/payableSummary">Payable Summary</a></li>							
 								<li><a href="../user/paymentApproval">Approval for Payments</a></li>
 								<li><a href="../user/funding">Funding</a></li>
-								<li><a href="../user/payableSummary">Payable Summary</a></li>
-								<li><a href="#">Pre-Payment Calculation </a></li>
-								<li><a href="#">Actual Calculation</a></li>
+								<li><a href="../user/prepaymentCalculation">Pre-Payment Calculation </a></li>
+								<li><a href="../user/actualPaymentCalculation">Actual Payment Calculation</a></li>
 								<li><a href="#">Out of Cycle settlement </a></li>
 							</ul></li>
 						<!-- end of submenu -->
@@ -87,7 +87,7 @@
 						<!-- Start of 	tx -->
 						<li class="dropdown-submenu"><a href="#">Transactions</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Transaction Details</a></li>
+								<li><a href="../user/transactionDetails">Transaction Details</a></li>
 							</ul></li>
 						<!-- end of submenu -->
 

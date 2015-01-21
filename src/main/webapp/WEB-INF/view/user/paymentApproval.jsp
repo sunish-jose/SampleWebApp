@@ -11,6 +11,7 @@
 <script src="../js/jquery-ui.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
 <script type="text/javascript">
 	google.load("visualization", "1", {
 		packages : [ "corechart" ]
@@ -22,11 +23,11 @@
 		// Some raw data (not necessarily accurate)
 		var data = google.visualization
 				.arrayToDataTable([
-						[ '', 'GBP', 'EUR', 'INR', 'JYP', 'ILS', 'HKD','SDR', 'FJD' ],
-						[ '', 165, 938, 522, 998, 450, 616, 800, 900 ], ]);
+						[ '', 'GBP', 'EUR' ],
+						[ '', 800, 879 ], ]);
 
 		var options = {
-			title : '',
+			title : ' Local Currecny',
 			vAxis : {
 				title : "Amount"
 			},
@@ -41,6 +42,27 @@
 				.getElementById('currencyAmtChart'));
 		chart.draw(data, options);
 	}
+	
+    google.setOnLoadCallback(drawChart);
+	 function drawChart() {
+
+	        var data = google.visualization.arrayToDataTable([
+	         ['Task', 'Hours per Day'],
+	          ['Reconcilied',     51],
+	          ['Missing',      21],
+	          ['Un-reconcilied',  28]
+
+	        ]);
+
+	        var options = {
+	          title: 'Reconciliation Summary',
+	          pieHole: 0.4,
+	       
+	        };
+
+	        var chart = new google.visualization.PieChart(document.getElementById('invoiceStatistics'));
+	        chart.draw(data, options);
+	      }
 </script>
 
 <script>
@@ -143,8 +165,12 @@
 
 			<div id="chart" class="topPaddingXLarge">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-6">
 						<div id="currencyAmtChart"></div>
+					</div>
+					
+					<div class="col-md-6">
+						<div id="invoiceStatistics"></div>
 					</div>
 				</div>
 			</div>
@@ -153,7 +179,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="table-responsive">
-							<h3>Position Admin</h3>
+						<div>
+							<h3>Position Admin</h3></div>
+							<div class="pull-right"><label>Hold positions</label></div>
 							<table
 								class="table table-bordered table-striped  table-curved hoveringTable"
 								id="positionDetails">
@@ -184,7 +212,7 @@
 										<td>EUR</td>
 										<td>28/11/2013</td>
 										<td>Payable</td>
-										<td>Open</td>
+										<td>Ready to be Paid</td>
 										<td><a href="#" id="note"><img
 												src="../images/note.jpg"></a></td>
 									</tr>
@@ -199,7 +227,7 @@
 										<td>USD</td>
 										<td>28/11/2013</td>
 										<td>Receivable</td>
-										<td>Open</td>
+										<td>Ready to be Paid</td>
 										<td><a href="#" id="note"><img
 												src="../images/note.jpg"></a></td>
 									</tr>
@@ -214,7 +242,7 @@
 										<td>EUR</td>
 										<td>28/11/2013</td>
 										<td>Payable</td>
-										<td>Open</td>
+										<td>Ready to be Paid</td>
 										<td><a href="#" id="note"><img
 												src="../images/note.jpg"></a></td>
 									</tr>
@@ -229,7 +257,7 @@
 										<td>USD</td>
 										<td>28/11/2013</td>
 										<td>Receivable</td>
-										<td>Open</td>
+										<td>Ready to be Paid</td>
 										<td><a href="#" id="note"><img
 												src="../images/note.jpg"></a></td>
 									</tr>

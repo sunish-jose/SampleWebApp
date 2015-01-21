@@ -9,14 +9,20 @@
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="../js/jquery-ui.min.js"></script>
 <script>
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
+		
+					$('#btnAddNewOpr').click(function () {
+						$("#tadigCode").val(' ');
+						$("#organization").val(' ');
+						$("#serviceType").val(' ');
+						$("#vatTaxNum").val(' ');
+						$("#operatorDetails").modal('show');
+					});
 
 						$.fn.openOpModal = function() {
 							$("#operatorDetails").modal('show');
 						}
-
+						
 						$("#addressDiv").hide();
 						$("#contactDiv").hide();
 						$("#bankAccountDiv").hide();
@@ -141,24 +147,27 @@
 											select : function(event, ui) {
 												$("#searchResults")
 														.html(
-																'<div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-																		+ ui.item.Name
-																		+ '</div><div>Tadig Code:'
+																'<div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">'
 																		+ ui.item.tadigCode
+																		+ '</div><div>'
+																		+ ui.item.Name
 																		+ '</div><div>Address:'
 																		+ ui.item.Address
-																		+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-																		+ ui.item.Name
-																		+ '</div><div>Tadig Code:'
+																		+ '</div><div>Service Type: GSM'
+																		+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">'
 																		+ ui.item.tadigCode
+																		+ '</div><div>'
+																		+ ui.item.Name
 																		+ '</div><div>Address:'
 																		+ ui.item.Address
-																		+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-																		+ ui.item.Name
-																		+ '</div><div>Tadig Code:'
+																		+ '</div><div>Service Type: SMS'
+																		+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">'
 																		+ ui.item.tadigCode
+																		+ '</div><div>'
+																		+ ui.item.Name
 																		+ '</div><div>Address:'
 																		+ ui.item.Address
+																		+ '</div><div>Service Type: IOT'
 																		+ '</div></div></div>');
 											}
 										});
@@ -189,14 +198,14 @@
 				<div class="col-md-6">
 					<div class="cientTopRight">
 						<p class="text-right topPaddingSmall">
-							<button type="button" class="btn btn-success btn-sm">
+							<button type="button" class="btn btn-success btn-sm" id="btnAddNewOpr">
 								<b>Add New Operator</b>
 							</button>
 						</p>
 					</div>
 				</div>
 			</div>
-			<div class="searchContainer">
+			<div>
 				<div class="row">
 					<div class="col-md-8 col-sm-offset-1">
 						<div id="imaginary_container">
@@ -220,11 +229,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row searchResults" id="searchResults">
-				<div class="col-md-6">
-					<div id="searchResultPlaceHolder" class="clientTile"></div>
-				</div>
-			</div>
+			<div class="row searchResults" id="searchResults"></div>
 		</div>
 	</div>
 
@@ -261,16 +266,29 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="bankName">Service Type</label> <input type="text"
-									class="form-control" id="organization" placeholder="GSM">
+									class="form-control" id="serviceType" placeholder="GSM">
 							</div>
 						</div>
 
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="bankName">VAT/TAX Number</label> <input type="text"
-									class="form-control" id="organization" placeholder="ATZP00988">
+									class="form-control" id="vatTaxNum" placeholder="ATZP00988">
 							</div>
 						</div>
+						
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="fch">FCH</label>
+								<select id="fch" class="form-control">
+									<option>BSG Wireless</option>
+									<option>Cnfone</option>
+									<option>Nextgen</option>
+									<option>Syniverse</option>
+								</select>
+							</div>
+						</div>
+						
 					</div>
 					<!-- address starts -->
 					<div class="row">
@@ -341,7 +359,7 @@
 										<th>Number</th>
 										<th>Primary Currency</th>
 										<th>Bank Name</th>
-										<th>IBAM - Code</th>
+										<th>IBAN - Code</th>
 									</tr>
 									<tr>
 										<td>Checking</td>

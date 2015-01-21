@@ -16,17 +16,6 @@
 		
 		$("#debitNoteSearchResults").hide();
 		
-
-		$("#127InvoicesInQueue").click(function() {
-			$('#creditNoteDebitNoteDiv').toggle();
-
-		});
-
-		$("#h4ApplyCNDN").click(function() {
-			$('#applyCreditDebitNotes').toggle();
-
-		});
-		
 		$("#searchDebitNote").click(function() {
 			$('#debitNoteSearchResults').show();
 
@@ -46,24 +35,6 @@
 		});
 		
 		
-		$('#invoiceInQueueTab tr').click(function() {
-			$("#dialog-confirm").dialog({
-				resizable : false,
-				height : 250,
-				width : 350,
-				modal : true,
-				opacity: .70,
-				buttons : {
-					"Yes" : function() {
-						$(this).dialog("close");
-					},
-					Cancel : function() {
-						$(this).dialog("close");
-					}
-				}
-			});
-		});
-
 	});
 </script>
 
@@ -101,7 +72,7 @@
 			<div id="paymentInvoiceQueue" class="topPaddingLarge">
 				<div class="row">
 					<div class="col-md-12">
-						<h4 id="127InvoicesInQueue" class="_pointer">
+						<h4 id="127InvoicesInQueue">
 							<i class="fa fa fa-database fa-rotate-90"></i>&nbsp;&nbsp;127
 							Credit Notes in the Queue
 						</h4>
@@ -246,7 +217,7 @@
 					</tbody>
 				</table>
 			</div>
-			<div class="row">
+			<div class="row bodypadding">
 				<div class="col-md-12">
 					<button type="button" class="btn btn-success btn-sm pull-right"
 						id="btnNwxt10">
@@ -255,7 +226,7 @@
 					</button>
 				</div>
 			</div>
-
+<!-- 
 			<div class="row">
 				<div class="col-md-6">
 					<div id="clientTopDiv">
@@ -267,6 +238,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div id="applyCreditDebitNotes">
 				<div class="row">
 					<div class="col-md-12">
@@ -342,9 +314,8 @@
 						</table>
 					</div>
 				</div>
-
 			</div>
-
+-->
 		</div>
 	</div>
 	<div id="next10Div" class="topPaddingLarge">
@@ -507,6 +478,7 @@
 									<option>Credit Note from Partner to Clietnt</option>
 									<option>Credit Note from Client to Partner</option>
 									<option>Debt Note from Client to Partner</option>
+									<option>Debt Note from Partner to Client</option>
 								</select>
 							</div>
 						</div>
@@ -572,12 +544,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="dialog-confirm" title="Confirm un-allocate?" class="hiddenDiv">
-		<p>
-			<span class="ui-icon ui-icon-alert"
-				style="float: left; margin: 0 7px 20px 0;"></span>Would you like to
-			apply Credit Note Debit Note?
-		</p>
-	</div>
+	
 </body>
 </html>

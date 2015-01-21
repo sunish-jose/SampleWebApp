@@ -34,6 +34,12 @@
 <script>
 	$(document).ready(function() {
 		
+		
+		$("#btnAddNewClient").click(function() {
+			$("#clientDetail").modal('show');
+		});
+		
+		
 		var users = [ {
 			value : 'LBYYZ TeleCellcom Telecommunications Inc.',
 			Name : 'TeleCellcom Telecommunications Inc.',
@@ -120,7 +126,7 @@
 				<div class="col-md-6">
 					<div class="cientTopRight">
 						<p class="text-right topPaddingSmall">
-							<button type="button" class="btn btn-success btn-sm">
+							<button type="button" class="btn btn-success btn-sm" id="btnAddNewClient">
 								<b>Add New Client</b>
 							</button>
 						</p>
@@ -152,14 +158,20 @@
 								<div align="center">
 									<img src="../images/logos/lbyyz.jpg" align="left">
 								</div>
-								<div>
-									<label>Code: LBYYZ</label>
+								<div class="fontMediumBold">
+									<label>LBYYZ</label>
 								</div>
 								<div>
-									<label>Name: TeleCellcom Telecomunications Inc. </label>
+									<label>TeleCellcom Telecomunications Inc. </label>
 								</div>
 								<div>
 									<label>Start Date: 13/12/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -168,14 +180,20 @@
 								<div align="center">
 									<img src="../images/logos/LAXYZ.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LAXYZ</label>
+								<div class="fontMediumBold">
+									<label>LAXYZ</label>
 								</div>
 								<div>
 									<label>Name: VimTapCom ZIP Co Ltd</label>
 								</div>
 								<div>
 									<label>Start Date: 13/12/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -184,14 +202,20 @@
 								<div align="center">
 									<img src="../images/logos/LBABC.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LBABC</label>
+								<div class="fontMediumBold">
+									<label>LBABC</label>
 								</div>
 								<div>
 									<label>Name: ComStar Communications Corp.</label>
 								</div>
 								<div>
 									<label>Start Date: 01/12/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -204,14 +228,20 @@
 								<div align="center">
 									<img src="../images/logos/LBDFG.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LBDFG</label>
+								<div class="fontMediumBold">
+									<label>LBDFG</label>
 								</div>
 								<div>
 									<label>Name: JIC 1 K.Y.K</label>
 								</div>
 								<div>
 									<label>Start Date: 01/11/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -220,14 +250,20 @@
 								<div align="center">
 									<img src="../images/logos/LIEMM.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LIEMM</label>
+								<div class="fontMediumBold">
+									<label>LIEMM</label>
 								</div>
 								<div>
 									<label>Name: Telecom Communications Corp</label>
 								</div>
 								<div>
 									<label>Start Date: 01/11/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -236,14 +272,20 @@
 								<div align="center">
 									<img src="../images/logos/LIEZP.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LIEZP</label>
+								<div class="fontMediumBold">
+									<label>LIEZP</label>
 								</div>
 								<div>
 									<label>Name: TimeLine Communications Corp</label>
 								</div>
 								<div>
 									<label>Start Date: 01/11/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -255,14 +297,20 @@
 								<div align="center">
 									<img src="../images/logos/LIYY9.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: LIYY9</label>
+								<div class="fontMediumBold">
+									<label>LIYY9</label>
 								</div>
 								<div>
 									<label>Name: BSG WirelessTelecomunications</label>
 								</div>
 								<div>
 									<label>Start Date: 01/10/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -271,14 +319,20 @@
 								<div align="center">
 									<img src="../images/logos/MYPOL.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: MYPOL</label>
+								<div class="fontMediumBold">
+									<label>MYPOL</label>
 								</div>
 								<div>
 									<label>Name: LimeLimeTeleCelcom Axixyz Berhad</label>
 								</div>
 								<div>
 									<label>Start Date: 01/11/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>
@@ -287,14 +341,20 @@
 								<div align="center">
 									<img src="../images/logos/MYZYX.jpg" align="middle">
 								</div>
-								<div>
-									<label>Code: MYZYX</label>
+								<div class="fontMediumBold">
+									<label>MYZYX</label>
 								</div>
 								<div>
 									<label>Name: TeleCelcom Axixyz Berhad</label>
 								</div>
 								<div>
 									<label>Start Date: 01/09/2014</label>
+								</div>
+								<div>
+									<label>Primary Funding Currency: GBP</label>
+								</div>
+								<div>
+									<label>Total Number of Agreement: 5</label>
 								</div>
 							</div>
 						</div>

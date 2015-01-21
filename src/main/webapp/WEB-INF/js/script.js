@@ -8,6 +8,10 @@ $(function() {
 		alert('I am clickable table')
 	});
 
+	$('#txb1').click(function() {
+		window.location.href = "positionAdmin";
+	});
+
 	$('#rxr1').click(function() {
 		window.location.href = "position";
 	});

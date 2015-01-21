@@ -10,12 +10,18 @@
 	href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 <script src="../js/jquery-ui.min.js"></script>
 <script>
-	$(document).ready(
-			function() {
+	$(document).ready(function() {
+		
+		
 				
 				$.fn.openOpModal = function() {
 					$("#AgreementDetail").modal('show');
 				}
+				$("#btnAddAgreement").click(function(){
+					$("#AgreementDetail").modal('show');
+				});
+				
+				
 
 				var users = [ {
 					value : 'LBYYZ TeleCellcom Telecommunications Inc.',
@@ -51,34 +57,60 @@
 					minLength : 2,
 				});
 				
-				var operatores = [ {
-					value : 'LBYYZ TeleCellcom Telecommunications Inc.',
-					Name : 'TeleCellcom Telecommunications Inc.',
-				}, {
-					value : 'LAXYZ VimTapCom ZIP Co Ltd',
-					Name : 'VimTapCom ZIP Co Ltd'
-				}, {
-					value : 'LBABC ComStar Communications Corp',
-					Name : 'ComStar Communications Corp'
-				}, {
-					value : 'LBDFG JIC 1 K.Y.K',
-					Name : 'JIC 1 K.Y.K'
-				}, {
-					value : 'LIEMM Telecom Communications Corp',
-					Name : 'Telecom Communications Corp'
-				}, {
-					value : 'LIEZP TimeLine Communications Corp',
-					Name : 'TimeLine Communications Corp'
-				}, {
-					value : 'LIYY9 BSG WirelessTelecomunications',
-					Name : 'BSG WirelessTelecomunications'
-				}, {
-					value : 'MYPOL LimeLimeTeleCelcom Axixyz Berhad',
-					Name : 'LimeLimeTeleCelcom Axixyz Berhad'
-				}, {
-					value : 'MYZYX TeleCelcom Axixyz Berhad',
-					Name : 'TeleCelcom Axixyz Berhad'
-				} ];
+				var operatores = [
+								{
+									value : 'LBYYZ TeleCellcom Telecommunications Inc.',
+									Name : 'TeleCellcom Telecommunications Inc.',
+									tadigCode : 'LBYYZ',
+									Address : 'Address1'
+								},
+								{
+									value : 'LAXYZ VimTapCom ZIP Co Ltd',
+									Name : 'VimTapCom ZIP Co Ltd',
+									tadigCode : 'LAXYZ',
+									Address : 'Address1'
+								},
+								{
+									value : 'LBABC ComStar Communications Corp',
+									Name : 'ComStar Communications Corp',
+									tadigCode : 'LAXYZ',
+									Address : 'Address1'
+								},
+								{
+									value : 'LBDFG JIC 1 K.Y.K',
+									Name : 'JIC 1 K.Y.K',
+									tadigCode : 'LBDFG',
+									Address : 'Address1'
+								},
+								{
+									value : 'LIEMM Telecom Communications Corp',
+									Name : 'Telecom Communications Corp',
+									tadigCode : 'LBDFG',
+									Address : 'Address1'
+								},
+								{
+									value : 'LIEZP TimeLine Communications Corp',
+									Name : 'TimeLine Communications Corp',
+									tadigCode : 'LIEZP',
+									Address : 'Address1'
+								},
+								{
+									value : 'LIYY9 BSG WirelessTelecomunications',
+									Name : 'BSG WirelessTelecomunications',
+									tadigCode : 'LIYY9',
+									Address : 'Address1'
+								},
+								{
+									value : 'MYPOL LimeLimeTeleCelcom Axixyz Berhad',
+									Name : 'LimeLimeTeleCelcom Axixyz Berhad',
+									tadigCode : 'MYPOL',
+									Address : 'Address1'
+								}, {
+									value : 'MYZYX TeleCelcom Axixyz Berhad',
+									Name : 'TeleCelcom Axixyz Berhad',
+									tadigCode : 'MYZYX',
+									Address : 'Address1'
+								} ];
 
 				$('#autocompleteOpt').autocomplete({
 					source : operatores,
@@ -86,24 +118,45 @@
 					select : function(event, ui) {
 						$("#searchResults")
 								.html(
-										'<div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-												+ ui.item.Name
-												+ '</div><div>Tadig Code:'
+										'<div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">Client Tadig Code:'
 												+ ui.item.tadigCode
-												+ '</div><div>Address:'
-												+ ui.item.Address
-												+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-												+ ui.item.Name
-												+ '</div><div>Tadig Code:'
+												+ '</div><div class="fontMediumBold">Partner Tadig Code:'
 												+ ui.item.tadigCode
-												+ '</div><div>Address:'
-												+ ui.item.Address
-												+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div>Name:'
-												+ ui.item.Name
-												+ '</div><div>Tadig Code:'
+												+ '</div><div>Service Type: GSM'
+												+ '</div><div>Payable Currency:'
+												+'USD'
+												+ '</div><div>Receivable Currency:'
+												+'USD'
+												+ '</div><div>Settlement Type:'
+												+'Bi-lateral'
+												+ '</div><div>Direction:'
+												+'Both'
+												+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">'
 												+ ui.item.tadigCode
-												+ '</div><div>Address:'
-												+ ui.item.Address
+												+ '</div><div class="fontMediumBold">Partner Tadig Code:'
+												+ ui.item.tadigCode
+												+ '</div><div>Service Type: SMS'
+												+ '</div><div>Payable Currency:'
+												+ 'GBP'
+												+ '</div><div>Receivable Currency:'
+												+'USD'
+												+ '</div><div>Settlement Type:'
+												+'Bi-lateral'
+												+ '</div><div>Direction:'
+												+'Both'
+												+ '</div></div></div><div class="col-md-4"><div class="clientTile" onMouseOver="showBorder()" onclick="openModal()"><div align="center"><img src="../images/operator.jpg" align="middle"></div><div class="fontMediumBold">'
+												+ ui.item.tadigCode
+												+ '</div><div class="fontMediumBold">Partner Tadig Code:'
+												+ ui.item.tadigCode
+												+ '</div><div>Service Type: SMS'
+												+ '</div><div>Payable Currency:'
+												+ 'GBP'
+												+ '</div><div>Receivable Currency:'
+												+'USD'
+												+ '</div><div>Settlement Type:'
+												+'Bi-lateral'
+												+ '</div><div>Direction:'
+												+'Both'
 												+ '</div></div></div>');
 					}
 				});				
@@ -137,7 +190,7 @@
 				<div class="col-md-6">
 					<div class="cientTopRight">
 						<p class="text-right topPaddingSmall">
-							<button type="button" class="btn btn-success btn-sm">
+							<button type="button" class="btn btn-success btn-sm" id="btnAddAgreement">
 								<b>Add Agreement</b>
 							</button>
 						</p>
@@ -183,9 +236,6 @@
 				</div>
 			</div>
 			<div class="row searchResults" id="searchResults">
-				<div class="col-md-6">
-					<div id="searchResultPlaceHolder" class="clientTile"></div>
-				</div>
 			</div>
 		</div>
 
