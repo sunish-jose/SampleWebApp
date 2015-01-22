@@ -159,6 +159,18 @@ public class UserController extends BaseController {
 		return "user/positionAdminDetails";
 	}
 	
+	@RequestMapping(value = "/invoiceGenerationNemaling", method = RequestMethod.GET)
+	public String invoiceGenerationNemaling(Model model){
+		model.addAttribute(new User());
+		return "user/invGenerationAndEmailing";
+	}
+	
+	@RequestMapping(value = "/viewInvoices", method = RequestMethod.GET)
+	public String viewInvoices(Model model){
+		model.addAttribute(new User());
+		return "user/invoiceDownLoad";
+	}
+	
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String addNewUser(@Valid User user, BindingResult bindingResult) {

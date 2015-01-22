@@ -299,8 +299,10 @@
 		
 	});
 </script>
+
 <style type="text/css">
-input[type="checkbox"] {
+
+/* input[type="checkbox"] {
 	display: none;
 }
 
@@ -318,7 +320,8 @@ input[type="checkbox"]:checked ~ label {
 }
 input[type="checkbox"]:checked ~ label:hover {
 cursor: pointer;
-}
+} */
+
 .FixedHeightContainer
 {
 height:600px;
@@ -331,6 +334,7 @@ overflow-x:hidden;
    overflow-y:auto;
     background:#fff;
 }
+
 </style>
 </head>
 <body>

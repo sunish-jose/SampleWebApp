@@ -244,40 +244,39 @@
 					</h4>
 				</div>
 				<!-- Modal header ends-->
-				<div class="modal-body">
-					<div class="row topPaddingSmall">
-						<div class="col-md-6">
+				
+				<div class="modal-body"><!-- modal body -->
+				
+					<div class="row">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="tadigCode">Tadig Code</label> <input type="text"
 									class="form-control" id="tadigCode" placeholder="LAXYZ">
 							</div>
 						</div>
 
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="bankName">Organization</label> <input type="text"
 									class="form-control" id="organization"
 									placeholder="BSG Wireless">
 							</div>
 						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="bankName">Service Type</label> <input type="text"
 									class="form-control" id="serviceType" placeholder="GSM">
 							</div>
 						</div>
 
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="bankName">VAT/TAX Number</label> <input type="text"
 									class="form-control" id="vatTaxNum" placeholder="ATZP00988">
 							</div>
 						</div>
-						
-						<div class="col-md-6">
+						<div class="col-md-4">
 							<div class="form-group">
 								<label for="fch">FCH</label>
 								<select id="fch" class="form-control">
@@ -288,8 +287,42 @@
 								</select>
 							</div>
 						</div>
-						
+						<div class="col-md-4">
+							<div class="form-group">
+								<label for="fch">FCH DCH</label>
+								<select id="fch" class="form-control">
+									<option>Nextgen</option>
+									<option>Syniverse</option>
+								</select>
+							</div>
+						</div>
+						<div class='col-md-12'>
+						<label for="fch">Current FCH Modules</label>
+							<table class="table table-striped   table-condensed">
+								<tbody>
+									<tr>
+										<td style="border-right:none;">Invoice Generation</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+										<td style="border-right:none;">Debtors / Receivable Management</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+										</tr>
+										<tr>
+										<td style="border-right:none;">Payments/Settlements</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+										<td style="border-right:none;">IOT Calculation and Settlements</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+										</tr>
+										<tr>
+										<td style="border-right:none;">General Ledger (Debtors/ Creditors Cash Allocations)</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+										<td style="border-right:none;">Software as service</td>
+										<td style="border-left:none;"><input type="checkbox" value="" checked="checked" disabled></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
+					
 					<!-- address starts -->
 					<div class="row">
 						<div class="col-md-12">
@@ -300,8 +333,7 @@
 					</div>
 					<div class="row" id="addressDiv">
 						<div class="col-md-12">
-							<table class="table table-bordered table-curved fontSmall"
-								id="addressTable">
+							<table class="table table-bordered table-curved fontSmall table-condensed"	id="addressTable">
 								<tbody>
 									<tr>
 										<th>Address 1</th>
@@ -335,9 +367,9 @@
 									</tr>
 								</tbody>
 							</table>
-							<button type="button" class="btn btn-primary btn-xs">Add
-								Address</button>
+							<div><button type="button" class="btn btn-primary btn-xs">Add Address</button></div>
 						</div>
+						
 					</div>
 					<div class="row">
 						<div class="col-md-12">
@@ -350,7 +382,7 @@
 					<!-- Bank Account -->
 					<div class="row" id="bankAccountDiv">
 						<div class="col-md-12">
-							<table class="table table-bordered table-curved fontSmall"
+							<table class="table table-bordered table-curved fontSmall table-condensed"
 								id="addressTable">
 								<tbody>
 									<tr>
@@ -395,7 +427,7 @@
 					<!-- Contact Div starts -->
 					<div class="row" id="contactDiv">
 						<div class="col-md-12">
-							<table class="table table-bordered table-curved fontSmall"
+							<table class="table table-bordered table-curved fontSmall table-condensed"
 								id="addressTable">
 								<tbody>
 									<tr>

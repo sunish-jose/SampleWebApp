@@ -17,7 +17,7 @@
 		$('#searchPayableInvoices').hide();
 
 		$('#payableInvoiceSingleDiv').hide();
-		
+
 		$('#pdfInvoiceDiv').hide();
 
 		$('#201InvoiceQueue').click(function() {
@@ -35,11 +35,11 @@
 		$('#invoiceInQueueTab tr').click(function() {
 			$('#documentHandlingModal').modal('show');
 		});
-		
+
 		$('#payableInvoiceSearchResultTab tr').click(function() {
 			$('#documentHandlingModal').modal('show');
 		});
-		
+
 	});
 </script>
 </head>
@@ -188,7 +188,8 @@
 			<div id="payableInvoiceSingleDiv" class="topPaddingLarge">
 				<div class="row bottomBorderDiv"></div>
 				<div class="topPaddingLarge">
-					<table class="table table-bordered  table-curved hoveringTable" id="payableInvoiceSearchResultTab">
+					<table class="table table-bordered  table-curved hoveringTable"
+						id="payableInvoiceSearchResultTab">
 						<tbody>
 							<tr>
 								<th>Client</th>
@@ -212,12 +213,10 @@
 					</table>
 				</div>
 			</div>
-
 			<div id="pdfInvoiceDiv" class="IFrameDiv">
 				<iframe src="../pdf/GSMInvoiceVdfone.pdf" width="100%" height="100%">
 				</iframe>
 			</div>
-
 		</div>
 	</div>
 	<div id="documentHandlingModal" class="modal fade">
@@ -231,10 +230,14 @@
 					</h4>
 				</div>
 				<div class="modal-body">
-					<div class="row topPaddingLarge">
+					<div class="row">
 						<div id="IFrameDiv" class="IFrameDiv">
 							<iframe src="../pdf/GSMInvoiceVdfone.pdf" width="100%"
 								height="100%"> </iframe>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
 						</div>
 					</div>
 					<div class="modal-footer">

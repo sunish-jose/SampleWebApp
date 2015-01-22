@@ -14,16 +14,46 @@
 
 		$("#next10Div").hide();
 		
-		$("#debitNoteSearchResults").hide();
+		$("#divPositionAdmin").hide();
 		
+
+		$("#debitNoteSearchResults").hide();
+
 		$("#searchDebitNote").click(function() {
 			$('#debitNoteSearchResults').show();
 
 		});
-		
+
 		$("#btnNwxt10").click(function() {
 			$("#invoiceInQueueTab").replaceWith($(invoiceInQueueTabNext));
 		});
+		
+		$("#invoiceInQueueTab tr").click(function() {
+			$("#divPositionAdmin").show();
+		});
+		
+		$("#invoiceInQueueTabNext tr").click(function() {
+			$("#divPositionAdmin").show();
+		});
+		
+		
+
+		$("#positionAdminTab tr").click(function() {
+			$("#dialog-confirm").dialog({
+				resizable : false,
+				height : 250,
+				width : 350,
+				modal : true,
+				buttons : {
+					"Yes" : function() {
+						$(this).dialog("close");
+					},
+					Cancel : function() {
+						$(this).dialog("close");
+					}
+				}
+			});
+		})
 
 		$("#btnCreditNote").click(function() {
 			$("#creditNoteModal").modal('show');
@@ -33,8 +63,7 @@
 
 			$("#creditNoteModal").modal('show');
 		});
-		
-		
+
 	});
 </script>
 
@@ -80,7 +109,8 @@
 				</div>
 			</div>
 			<div id="creditNoteDebitNoteDiv" class="topPaddingLarge">
-				<table class="table table-bordered  table-curved table-striped"
+				<table
+					class="table table-bordered  table-curved table-striped hoveringTable"
 					id="invoiceInQueueTab">
 					<tbody>
 						<tr>
@@ -226,7 +256,89 @@
 					</button>
 				</div>
 			</div>
-<!-- 
+
+			<div class="row" id="divPositionAdmin">
+				<div class="col-md-12">
+					<div class="table-responsive">
+						<h3>Position Admin</h3>
+						<table class="table table-bordered table-striped table-curved hoveringTable" id="positionAdminTab">
+							<tbody>
+								<tr>
+									<th>Partner</th>
+									<th>Tadig Code</th>
+									<th>Service Type</th>
+									<th>Traffic Period</th>
+									<th>Settlement Type</th>
+									<th>Net SDR</th>
+									<th>Net Amount</th>
+									<th>Currency</th>
+									<th>Due Date</th>
+									<th>Position Type</th>
+									<th>Notes</th>
+
+								</tr>
+								<tr>
+									<td>AAAAAA</td>
+									<td>GBRCN</td>
+									<td>GSM</td>
+									<td>Sep/2013</td>
+									<td>Gross</td>
+									<td>10000.25</td>
+									<td>16,263.23</td>
+									<td>EUR</td>
+									<td>28/11/2013</td>
+									<td>Payable</td>
+									<td><a href="#" id="note"><img
+											src="../images/note.jpg"></a></td>
+								</tr>
+								<tr>
+									<td>BBBBBBBB</td>
+									<td>DEUE2</td>
+									<td>SMS</td>
+									<td>Sep/2013</td>
+									<td>Gross</td>
+									<td>600.00</td>
+									<td>800.00</td>
+									<td>USD</td>
+									<td>28/11/2013</td>
+									<td>Receivable</td>
+									<td><a href="#" id="note"><img
+											src="../images/note.jpg"></a></td>
+								</tr>
+								<tr>
+									<td>CCCCCCC</td>
+									<td>AIACW</td>
+									<td>GSM</td>
+									<td>Sep/2013</td>
+									<td>Gross</td>
+									<td>9000.25</td>
+									<td>8526.23</td>
+									<td>EUR</td>
+									<td>28/11/2013</td>
+									<td>Payable</td>
+									<td><a href="#" id="note"><img
+											src="../images/note.jpg"></a></td>
+								</tr>
+								<tr>
+									<td>DDDDDD</td>
+									<td>AUTMM</td>
+									<td>SMS</td>
+									<td>Sep/2013</td>
+									<td>Gross</td>
+									<td>600.00</td>
+									<td>800.00</td>
+									<td>USD</td>
+									<td>28/11/2013</td>
+									<td>Receivable</td>
+									<td><a href="#" id="note"><img
+											src="../images/note.jpg"></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!-- 
 			<div class="row">
 				<div class="col-md-6">
 					<div id="clientTopDiv">
@@ -319,7 +431,7 @@
 		</div>
 	</div>
 	<div id="next10Div" class="topPaddingLarge">
-		<table class="table table-bordered  table-curved table-striped"
+		<table class="table table-bordered  table-curved table-striped hoveringTable"
 			id="invoiceInQueueTabNext">
 			<tbody>
 				<tr>
@@ -544,6 +656,12 @@
 			</div>
 		</div>
 	</div>
-	
+	<div id="dialog-confirm" title="Confirm un-allocate?" class="hiddenDiv">
+		<p>
+			<span class="ui-icon ui-icon-alert"
+				style="float: left; margin: 0 7px 20px 0;"></span>Would you like to
+		allocate the item?
+		</p>
+	</div>
 </body>
 </html>

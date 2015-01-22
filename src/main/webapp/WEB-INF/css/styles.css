@@ -714,3 +714,23 @@ hr {
 	display: block;
 	padding: 5px;
 }
+
+.chkhide{
+	display: none;
+}
+.chkhide ~ label {
+	color: blue;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+}
+.chkhide ~ label:hover {
+cursor: pointer;
+}
+
+.chkhide:checked ~ label {
+	color: green;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+}
+
+.chkhide:checked ~ label:hover {
+cursor: pointer;
+}

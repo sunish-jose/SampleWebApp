@@ -27,9 +27,9 @@
 						class="glyphicon glyphicon-cog"></span>&nbsp;Setting<span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
+					<li><a href="#"><i class="fa fa-cog"></i>&nbsp;Setup KPIs</a></li>
 						<li><a href="../user/operator"><i class="fa fa-wifi"></i>&nbsp;Operator - IO</a></li>
 						<li><a href="../user/bank"><i class="fa fa-university"></i>&nbsp;Bank - IO</a></li>
-						<li><a href="#"><i class="fa fa-user"></i>&nbsp;Bank Account - IO</a></li>
 						<li><a href="../user/agreement"><i class="fa fa-suitcase"></i>&nbsp;Roaming Agreement - EI</a></li>
 						<li><a href="../user/authSetup"><i class="fa fa-key"></i>&nbsp;Authentication Setup - IO</a></li>
 						<li><a href="../user/client"><i class="fa fa-user"></i>&nbsp;Client - IO</a></li>
@@ -77,10 +77,10 @@
 
 
 						<!-- Start of 	invoice -->
-						<li class="dropdown-submenu"><a href="#">Invoices</a>
+						<li class="dropdown-submenu"><a href="#">Invoice Management</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Receivable</a></li>
-								<li><a href="#">Payable</a></li>
+								<li><a href="../user/invoiceGenerationNemaling">Invoice Generation &#38; Emailing</a></li>
+								<li><a href="../user/viewInvoices">View Invoices</a></li>
 							</ul></li>
 						<!-- end of submenu -->
 

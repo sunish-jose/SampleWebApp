@@ -65,7 +65,6 @@
 						<td>USD</td>
 						<td><a href="#"><img src="../images/pdfIcon.png"></a></td>
 					</tr>
-
 					<tr>
 						<td>CN</td>
 						<td>CR09/2014</td>
@@ -78,6 +77,20 @@
 						<td>0.00</td>
 						<td>150.00</td>
 						<td>EUR</td>
+						<td><a href="#"><img src="../images/pdfIcon.png"></a></td>
+					</tr>
+					<tr>
+						<td>NT</td>
+						<td>NETTING</td>
+						<td>101.00</td>
+						<td>00.00</td>
+						<td>0.00</td>
+						<td>120.00</td>
+						<td>130.00</td>
+						<td>0.00</td>
+						<td>0.00</td>
+						<td>160.00</td>
+						<td>USD</td>
 						<td><a href="#"><img src="../images/pdfIcon.png"></a></td>
 					</tr>
 				</tbody>
