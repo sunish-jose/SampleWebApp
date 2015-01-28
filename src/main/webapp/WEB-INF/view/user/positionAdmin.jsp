@@ -98,6 +98,9 @@
 				</tbody>
 			</table>
 		</div>
+		<div class="col-md-12">
+			<button type="button" class="btn btn-success pull-right">Download&nbsp;<i class="fa fa-download"></i></button>
+			</div>
 	</div>
 
 	<!-- Modal window Notes -->

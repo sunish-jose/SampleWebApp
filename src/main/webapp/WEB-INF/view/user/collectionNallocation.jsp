@@ -336,7 +336,7 @@ input[type="checkbox"]:checked ~ label:hover {
 									<div class="form-group">
 										<select id="reason" class="form-control">
 											<option>Bank Charges</option>
-											<option>FX Lost</option>
+											<option>FX Loss</option>
 											<option selected>FX Gained</option>
 											<option>Overvalue position</option>
 											<option>Undervaue position</option>
@@ -397,7 +397,7 @@ input[type="checkbox"]:checked ~ label:hover {
 									<div class="form-group">
 										<select id="reason" class="form-control">
 											<option>Bank Charges</option>
-											<option>FX Lost</option>
+											<option>FX Loss</option>
 											<option>FX Gained</option>
 											<option>Overvalue position</option>
 											<option>Undervaue position</option>
@@ -458,7 +458,7 @@ input[type="checkbox"]:checked ~ label:hover {
 									<div class="form-group">
 										<select id="reason" class="form-control">
 											<option>Bank Charges</option>
-											<option>FX Lost</option>
+											<option>FX Loss</option>
 											<option>FX Gained</option>
 											<option>Overvalue position</option>
 											<option>Undervaue position</option>

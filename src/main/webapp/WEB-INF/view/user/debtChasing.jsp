@@ -185,9 +185,7 @@ input[type="checkbox"]:checked ~ label:hover {
 				</div>
 
 				<div class="col-md-6">
-
 					<div id="invoiceStatistics"></div>
-
 				</div>
 
 				</div>

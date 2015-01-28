@@ -19,21 +19,25 @@
 				<li><a href="../user/home"><span
 						class="glyphicon glyphicon-home" data-toggle="tooltip"
 						data-placement="bottom" title="Home"></span></a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-retweet"></span>
-						Communications</a></li>
 
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
+				<li class="dropdown"><a href="#" class="dropdown-toggle" 
 					data-toggle="dropdown" role="button" aria-expanded="false"><span
-						class="glyphicon glyphicon-cog"></span>&nbsp;Setting<span class="caret"></span>
+						class="glyphicon glyphicon-retweet"></span>&nbsp;Communications<span class="caret"></span>
 				</a>
 					<ul class="dropdown-menu" role="menu">
-					<li><a href="#"><i class="fa fa-cog"></i>&nbsp;Setup KPIs</a></li>
+						<li><a href="../user/customerActions">Customer Actions</a></li>
+					</ul></li>
+
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog fa-spin"></i>&nbsp;Setting<span class="caret"></span>
+				</a>
+					<ul class="dropdown-menu" role="menu">
 						<li><a href="../user/operator"><i class="fa fa-wifi"></i>&nbsp;Operator - IO</a></li>
 						<li><a href="../user/bank"><i class="fa fa-university"></i>&nbsp;Bank - IO</a></li>
 						<li><a href="../user/agreement"><i class="fa fa-suitcase"></i>&nbsp;Roaming Agreement - EI</a></li>
 						<li><a href="../user/authSetup"><i class="fa fa-key"></i>&nbsp;Authentication Setup - IO</a></li>
 						<li><a href="../user/client"><i class="fa fa-user"></i>&nbsp;Client - IO</a></li>
-						<li><a href="#"><i class="fa fa-gears"></i>&nbsp;Setup Audit - IO</a></li>
+						<li class="disabled"><a href="#"><i class="fa fa-gears"></i>&nbsp;Setup Audit - IO</a></li>
 					</ul></li>
 
 
@@ -42,7 +46,7 @@
 						class="glyphicon glyphicon-dashboard"></span> FCH Services <span
 						class="caret"></span> </a>
 					<ul class="dropdown-menu" role="menu">
-
+						<li><a href="../user/setupKPIs">KPIs</a></li>
 						<!-- Start of submenu debtor -->
 						<li class="dropdown-submenu"><a href="#">Debtors/Receivable
 								Management&nbsp; </a>
@@ -61,7 +65,7 @@
 								<li><a href="../user/funding">Funding</a></li>
 								<li><a href="../user/prepaymentCalculation">Pre-Payment Calculation </a></li>
 								<li><a href="../user/actualPaymentCalculation">Actual Payment Calculation</a></li>
-								<li><a href="#">Out of Cycle settlement </a></li>
+								<li class="disabled"><a href="#">Out of Cycle settlement </a></li>
 							</ul></li>
 						<!-- end of submenu -->
 
@@ -71,7 +75,7 @@
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="../user/invoiceReconciliation">GSM Payable Invoice Reconciliation</a></li>
 								<li><a href="../user/creditDebitNote">Credit Note/Debit Note Entry</a></li>
-								<li><a href="#">Credit Note Application</a></li>
+								<li  class="disabled"><a href="#">Credit Note Application</a></li>
 							</ul></li>
 						<!-- end of submenu -->
 
@@ -95,13 +99,12 @@
 						<!-- Start of 	reports -->
 						<li class="dropdown-submenu"><a href="#">Reports</a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Dynamic Reports</a></li>
+								<li class="disabled"><a href="#">Dynamic Reports</a></li>
 								<li><a href="../report/standardReport">Standard Reports</a></li>
-								<li><a href="../report/verificationReport">Verification
-										Reports</a></li>
+								<li><a href="../report/analyticReport">Analytics</a></li>
 							</ul></li>
-						<li><a href="#">Tap Analysis Portal</a></li>
-						<li><a href="#">FCH Audit - IO</a></li>
+						<li class="disabled"><a href="#">Tap Analysis Portal</a></li>
+						<li class="disabled"><a href="#">FCH Audit - IO</a></li>
 					</ul></li>
 				<!-- end of submenu -->
 

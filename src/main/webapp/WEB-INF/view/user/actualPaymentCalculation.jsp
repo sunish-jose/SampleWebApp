@@ -60,31 +60,10 @@
 							<div class="col-md-2">
 								<div class="form-group">
 									<label>&nbsp;Batch&nbsp;1</label>
-									<div class="divBatch1">
-										<span class="blockSpan">LBYXX</span> <span class="blockSpan">LYZAA</span>
-										<span class="blockSpan">ABCDE</span> <span class="blockSpan">DFVCS</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-2">
-								<div class="form-group">
-									<div class="divBase1">
-										<span class="blockSpan">Run</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="row">
-							<div class="col-md-2">
-								<div class="form-group">
-									<label>&nbsp;Batch&nbsp;2</label>
 									<div class="divBatch2">
 										<span class="blockSpan">LBYXX</span> <span class="blockSpan">LYZAA</span>
 										<span class="blockSpan">ABCDE</span> <span class="blockSpan">DFVCS</span>
+										<span class="blockSpan">ABCYE</span> <span class="blockSpan">CFVCS</span>
 									</div>
 								</div>
 							</div>
@@ -93,28 +72,6 @@
 							<div class="col-md-2">
 								<div class="form-group">
 									<div class="divBase2">
-										<span class="blockSpan">Run</span>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<div class="row">
-							<div class="col-md-2">
-								<div class="form-group">
-									<label>&nbsp;Batch&nbsp;3</label>
-									<div class="divBatch3">
-										<span class="blockSpan">LBYXX</span> <span class="blockSpan">LYZAA</span>
-										<span class="blockSpan">ABCDE</span> <span class="blockSpan">DFVCS</span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-2">
-								<div class="form-group">
-									<div class="divBase3">
 										<span class="blockSpan">Run</span>
 									</div>
 								</div>

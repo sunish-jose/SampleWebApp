@@ -528,7 +528,6 @@ hr {
 	width: 100%;
 	height: 400px;
 }
-
 .divBottom {
 	position: relative;
 }
@@ -715,22 +714,120 @@ hr {
 	padding: 5px;
 }
 
-.chkhide{
+.chkhide {
 	display: none;
 }
+
 .chkhide ~ label {
 	color: blue;
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
 }
+
 .chkhide ~ label:hover {
-cursor: pointer;
+	cursor: pointer;
 }
 
 .chkhide:checked ~ label {
 	color: green;
-	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
 }
 
 .chkhide:checked ~ label:hover {
-cursor: pointer;
+	cursor: pointer;
+}
+
+.stdReportLabel {
+	font-size: .88em;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+	color: #4D70DB;
+}
+
+.reportIconColor {
+	color: #009933;
+}
+
+.coloredContainer {
+	background-color: #E0E0E2;
+	padding: 10px;
+}
+
+.kpiTable {
+	border: solid 1px #E0E0E2;
+	height: 290px;
+	vertical-align: top;
+}
+
+.kpiTable tbody th {
+	height: 30px;
+	color: #ffffff;
+	background-color: #4D70DB !important;
+	border-color: #80B2FF !important;
+	text-align: left;
+	font-size: 18px;
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+}
+
+
+.kpiTable tbody td {
+	text-align: center;
+	border-color: #FFF !important;
+	background-color: #FFF !important;
+	text-align: left;
+	font-size: 15px;
+}
+
+.boldTdText {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+	font-weight: bold;
+	color: #4D70DB;
+}
+
+.boldTdSubtitle {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode',
+		'Lucida Sans', Tahoma, sans-serif;
+	font-weight: bold;
+	color: #3B2A2A;
+}
+
+.kpiCircleRed {
+	width: 80px;
+	height: 80px;
+	border-radius: 100px;
+	font-size: 15px;
+	color: #fff;
+	line-height: 80px;
+	text-align: center;
+	background: #D63333;
+}
+.orangeBoldFont {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-weight: bold;
+	color: #FF9900;
+}
+
+.right-inner-addon {
+    position: relative;
+}
+.right-inner-addon input {
+    padding-right: 30px;    
+}
+.right-inner-addon i {
+    position: absolute;
+    right: 0px;
+    padding: 10px 12px;
+}
+.labelBoldBlue {
+	font-family: 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
+	font-weight: bold;
+	color: #3366CC;
+	font-size: 17px;
+}
+.frameDiv{
+	 padding-right: 2cm;
+	  padding-left: 2cm;
 }

@@ -18,4 +18,8 @@ public class ReportController extends BaseController{
 		return "report/verificationReport";
 	}	
 
+	@RequestMapping(value = "/analyticReport", method = RequestMethod.GET)
+	public String showAnalyticReport() {
+		return "report/analyticReport";
+	}	
 }

@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
-
-<%@include file="../headerResource.jsp"%>
+<%@include file="../headerResource.jsp"%>	
 
 <script>
 	$(document).ready(function() {
@@ -30,27 +29,32 @@
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 				[ '', 'USD', 'EUR' ],
-				[ '< 30 Days',  125253.23,      156877.22],
-    ['> 30 Days',
-						121325.23, 136666.22 ],
-				[ '> 60 Days', 2222.25, 15000.25 ],
-				[ '> 90 Days', 15000.25, 7500.26 ],
-				[ '> 120 Days', 6000, 3569.25 ] ]);
+		                                  				[ '> 120 Days', 0, 0 ],
+		                                  				[ '> 90 Days', 0, 0 ],
+		                                  				[ '> 60 Days', 0, 0 ],
+		                                  				['> 30 Days', 0, 0 ],
+		                                  				[ '< 30 Days',  0,      0]
+				]);
 
 		var options = {
 			height : '400',
+			animation: {duration: 1000, easing: 'out' },
 			title : 'Outstanding Receivables (Net Receiver)',
-			vAxis : {
-				title : 'Time in Days',
-				titleTextStyle : {
-					color : 'red'
-				}
-			}
+			vAxis : { title : 'Time in Days', titleTextStyle : {color : 'red'}	}
 		};
 
-		var chart = new google.visualization.BarChart(document
-				.getElementById('outstandingRx'));
-
+		var chart = new google.visualization.BarChart(document	.getElementById('outstandingRx'));
+		chart.draw(data, options);
+		
+		var data = google.visualization.arrayToDataTable([
+		                                  				[ '', 'USD', 'EUR' ],
+		                                  				[ '> 120 Days', 6000, 3569.25 ],
+		                                  				[ '> 90 Days', 15000.25, 7500.26 ],
+		                                  				[ '> 60 Days', 2222.25, 15000.25 ],
+		                                  				['> 30 Days', 121325.23, 136666.22 ],
+		                                  				[ '< 30 Days',  125253.23,      156877.22]
+		                                  				]);
+		
 		chart.draw(data, options);
 	}
 
@@ -112,12 +116,14 @@
 		// Some raw data (not necessarily accurate)
 		var data = google.visualization.arrayToDataTable([
 				[ 'Month', 'USD', 'EUR', ],
-				[ 'November', 125253.23, 256877.22 ],
-				[ 'December', 136676.22, 236666.22 ],
-				[ 'January', 52222.25, 150000.25 ], ]);
+				[ 'November', 0, 0 ],
+				[ 'December', 0, 0 ],
+				[ 'January', 0, 0 ], ]);
 
 		var options = {
 			title : 'Last 3 Months Collection',
+			 animation: {duration: 1000, easing: 'out' },
+
 			vAxis : {
 				title : ""
 			},
@@ -127,9 +133,16 @@
 			seriesType : "bars",
 		};
 
-		var chart = new google.visualization.ComboChart(document
-				.getElementById('last3MonthsCollection'));
+		var chart = new google.visualization.ComboChart(document.getElementById('last3MonthsCollection'));
 		chart.draw(data, options);
+		
+		var data = google.visualization.arrayToDataTable([
+		                                                  ['Month', 'USD', 'EUR'],
+		                                                  ['November',  125253.23,      256877.22],
+		                                                  ['December',  136676.22,      236666.22],
+		                                                  ['January',  52222.25,      150000.25]
+		                                                ]);
+		                                                chart.draw(data, options);
 	}
 </script>
 
@@ -148,6 +161,10 @@
 				[ 'GBRMT', 5488.39 ] ]);
 
 		var options = {
+			animation : {
+				duration : 1000,
+				easing : 'out'
+			},
 			height : '600',
 			title : 'Top 10 Receivable Positions',
 			is3D : true,
@@ -156,7 +173,7 @@
 		var chart = new google.visualization.PieChart(document
 				.getElementById('top10RxPositionsPieChart'));
 		chart.draw(data, options);
-		
+
 		google.visualization.events.addListener(chart, 'select', function() {
 			$('#top10RxPositionsDiv').show();
 		});
@@ -169,18 +186,18 @@
 	function drawChart() {
 		var data = google.visualization
 				.arrayToDataTable([
-						[ 'Year', 'USD Received', 'USD all', 'EUR Received', 'EUR All' ], 
-						[ '', 0, 0, 0, 0 ],
-						[ 'November', 2000, 2000, 200, 200 ],
-						[ 'December', 1000, 3000, 3000, 3200 ],
-						[ 'January', 1500, 4500, 600, 3800 ]
+						[ 'Year', 'USD Received', 'USD allocated' ],
+						[ '', 0, 0 ],
+						[ 'November', 800, 900 ],
+						[ 'December', 1050, 1100 ],
+						[ 'January', 750, 800 ]
 
 				]);
 
 		var options = {
-			height : '600',
-			width : '700',
-			title : 'Top 10 Receivable positions',
+			height : '500',
+			width : '600',
+			title : 'Last 3 months allocation trends [USD] [EUR]',
 			curveType : 'function',
 			legend : {
 				position : 'bottom'
@@ -333,7 +350,7 @@
 				<div id="top10RxPositionsPieChart"></div>
 			</div>
 
-			<div class="col-md-7">
+			<div class="col-md-7"  style="text-align:center;">
 				<div id="top10RxPositionsLineGraph"></div>
 			</div>
 

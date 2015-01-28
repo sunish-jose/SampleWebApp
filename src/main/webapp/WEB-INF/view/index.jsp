@@ -57,8 +57,7 @@
 				<label><input type="checkbox" value="remember-me">Remember
 					me</label>
 			</div>
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in&nbsp;<i class="fa fa-sign-in fa-lg"></i></button>
+			<button class="btn btn-lg btn-primary btn-block btn-login" type="submit">Login&nbsp;<i class="fa fa-arrow-circle-o-right fa-lg"></i></button>
 			<a href="#">Forgot Password</a>
 		</form>
 	</div>

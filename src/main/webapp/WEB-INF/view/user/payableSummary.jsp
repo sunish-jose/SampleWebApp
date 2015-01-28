@@ -5,13 +5,83 @@
 <link href="favicon.ico" rel="shortcut icon">
 <title>BSG Financial Clearing Portal</title>
 <%@include file="../headerResource.jsp"%>
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}"></script>
 <script>
 	$(document).ready(function() {
 		$('#tobePaidDetailsDiv').hide();
 		$('#outstandingPayable').hide();
 
 	});
+</script>
+
+<script>
+google.load("visualization", "1", {
+	packages : [ "corechart" ]
+});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+       var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+         ['Reconcilied',     51],
+         ['Missing',      21],
+         ['Un-reconcilied',  28]
+
+       ]);
+
+       var options = {
+         title: 'Reconciliation Summary',
+         pieHole: 0.4,
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('invoiceStatistics'));
+       chart.draw(data, options);
+     }
+</script>
+
+<script>
+google.load("visualization", "1", {
+	packages : [ "corechart" ]
+});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+    var data = google.visualization.arrayToDataTable([
+                                                      ['Task', 'Failed Payments'],
+                                                       ['Successful',     95],
+                                                       ['Failed',      5]
+                                                     ]);
+       var options = {
+         title: 'Failed Payments',
+         pieHole: 0.4,
+       };
+       var chart = new google.visualization.PieChart(document.getElementById('failedPaymentsStatistics'));
+       chart.draw(data, options);
+     }
+</script>
+
+<script>
+google.load("visualization", "1", {
+	packages : [ "corechart" ]
+});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+
+       var data = google.visualization.arrayToDataTable([
+        ['Task', 'Total Funded'],
+         ['Funded',     80],
+         ['Not Funded',      20]
+
+       ]);
+
+       var options = {
+         title: 'Total Funded',
+         pieHole: 0.4,
+       };
+
+       var chart = new google.visualization.PieChart(document.getElementById('fundedStatistics'));
+       chart.draw(data, options);
+     }
 </script>
 
 
@@ -24,13 +94,14 @@
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 				[ '', 'ILS', 'JYP', 'FJD', 'INR', 'EUR', 'USD', 'GBP' ],
-				[ '', 100, 400, 600, 800, 1000, 1200, 1500 ] ]);
+				[ '', 0, 0, 0, 0, 0, 0, 0 ] ]);
 
 		var data1 = google.visualization.arrayToDataTable([
 				[ '', 'ILS', 'JYP', 'FJD', 'INR', 'EUR', 'USD', 'GBP' ],
-				[ '', 150, 300, 500, 700, 1500, 1110, 1500 ] ]);
+				[ '', 0, 0, 0, 0, 0, 0, 0 ] ]);
 
 		var options = {
+				animation: {duration: 1000, easing: 'out' },
 			title : '',
 			vAxis : {
 				title : 'Net SDR',
@@ -46,22 +117,33 @@
 			}
 		};
 
-		var chart = new google.visualization.BarChart(document
-				.getElementById('tobePaidDiv'));
-
+		var chart = new google.visualization.BarChart(document	.getElementById('tobePaidDiv'));
 		chart.draw(data, options);
-
+		
+		var data = google.visualization.arrayToDataTable([
+		                                  				[ '', 'ILS', 'JYP', 'FJD', 'INR', 'EUR', 'USD', 'GBP' ],
+		                                  				[ '', 400, 300, 400, 800, 1000, 1200, 1500 ] ]);
+		chart.draw(data, options);
 		google.visualization.events.addListener(chart, 'select', function() {
 			$('#tobePaidDetailsDiv').show();
+			$('html, body').animate({
+		        scrollTop: $("#forexRateDiv").offset().top
+		    }, 2000);
 		});
 
-		var chart1 = new google.visualization.BarChart(document
-				.getElementById('outstandingPayablesDiv'));
-
+		var chart1 = new google.visualization.BarChart(document.getElementById('outstandingPayablesDiv'));
+		chart1.draw(data1, options);
+		
+		var data1 = google.visualization.arrayToDataTable([
+		                                   				[ '', 'ILS', 'JYP', 'FJD', 'INR', 'EUR', 'USD', 'GBP' ],
+		                                   				[ '', 150, 300, 500, 700, 1500, 1110, 1500 ] ]);
 		chart1.draw(data1, options);
 
 		google.visualization.events.addListener(chart1, 'select', function() {
 			$('#outstandingPayable').show();
+			$('html, body').animate({
+		        scrollTop: $("#forexRateDiv").offset().top
+		    }, 2000);
 		});
 	}
 </script>
@@ -77,8 +159,21 @@
 		</ol>
 		<!-- row starting -->
 		<div class="row topPaddingSmall">
+			<div class="col-md-4">
+			<div id="invoiceStatistics"></div>
+			</div>
+			<div class="col-md-4">
+			<div id="failedPaymentsStatistics"></div>
+			</div>
+			<div class="col-md-4">
+			<div id="fundedStatistics"></div>
+			</div>
+			
+		</div>
+		<div class="row topPaddingSmall">
+
 			<div class="col-md-8">
-				<h3>Funding</h3>
+				<h3>Current Funding</h3>
 				<table
 					class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
@@ -105,7 +200,7 @@
 			</div>
 
 			<div class="col-md-4">
-				<h3>Estimated Funding</h3>
+				<h3>Future Funding</h3>
 				<table
 					class="table table-bordered table-striped table-hover table-curved">
 					<tbody>
@@ -145,7 +240,8 @@
 					<h3>Outstanding Payable</h3>
 					<div id="outstandingPayablesDiv" class="paymentGrapgDiv"></div>
 				</div>
-
+			</div>
+			<div class="row">
 				<div id="tobePaidDetailsDiv" class="col-md-6">
 					<h3>To be Paid in Current Cycle</h3>
 					<table
@@ -199,10 +295,6 @@
 						</tbody>
 					</table>
 				</div>
-			</div>
-
-			<div id="row">
-
 				<div class="col-md-6" id="outstandingPayable">
 					<h3>Outstanding Payable</h3>
 					<table

@@ -121,6 +121,16 @@ public class UserController extends BaseController {
 		return "user/invoiceReconciliation";
 	}
 	
+	@RequestMapping(value = "/invoiceReconciliationFrame", method = RequestMethod.GET)
+	public String invoiceReconciliationFrame() {
+		return "user/invoiceReconciliationFrame";
+	}
+	
+	@RequestMapping(value = "/invoiceReconciliationRightSide", method = RequestMethod.GET)
+	public String invoiceReconciliationRightSide() {
+		return "user/invoiceReconciliationRightSide";
+	}
+	
 	@RequestMapping(value = "/creditDebitNote", method = RequestMethod.GET)
 	public String creditDebitNote() {
 		return "user/creditDebitNote";
@@ -169,6 +179,20 @@ public class UserController extends BaseController {
 	public String viewInvoices(Model model){
 		model.addAttribute(new User());
 		return "user/invoiceDownLoad";
+	}
+	
+		@RequestMapping(value = "/customerActions", method = RequestMethod.GET)
+	public String customerActions() {
+		return "user/customerActions";
+	}
+	
+	
+	
+	
+	@RequestMapping(value = "/setupKPIs", method = RequestMethod.GET)
+	public String setupKPIs(Model model){
+		model.addAttribute(new User());
+		return "user/setupKPIs";
 	}
 	
 	
